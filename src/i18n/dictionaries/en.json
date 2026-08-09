@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "Loulou & Lou — A World of Songs and Stories",
+    "description": "The magical world of Loulou & Lou: music, fairytales, the Sprookjesfilm, audiobooks and the theatershow — all in one place."
+  },
+  "nav": {
+    "home": "Home",
+    "music": "Music",
+    "sprookjesfilm": "Sprookjesfilm",
+    "stories": "Stories & Audiobooks",
+    "theatershow": "Theatershow",
+    "world": "Meet the World",
+    "about": "About Us"
+  },
+  "common": {
+    "listenOn": "Listen & watch on",
+    "learnMore": "Learn more",
+    "backHome": "Back to the world",
+    "comingSoonBadge": "More on the way",
+    "openBook": "Open the storybook"
+  },
+  "hero": {
+    "eyebrow": "Welcome to",
+    "title": "The World of Loulou & Lou",
+    "subtitle": "Songs to dance to, fairytales to fall asleep in, and a live band that makes it all come alive. One cosy corner of the internet for everything Loulou & Lou.",
+    "ctaPrimary": "Step into the world",
+    "ctaSecondary": "Listen to our music"
+  },
+  "home": {
+    "worldEyebrow": "Everything in one place",
+    "worldTitle": "So much to discover",
+    "worldSubtitle": "We've made music, films, stories and shows for years, scattered across the internet. This is where it all finally lives together.",
+    "listenEyebrow": "Wherever you already listen",
+    "listenTitle": "Take us with you",
+    "listenSubtitle": "Our albums and songs are streaming on your favourite platforms — tap through and press play.",
+    "charactersEyebrow": "Meet the friends",
+    "charactersTitle": "Say hello to Loulou & Lou",
+    "charactersBody": "Two best friends, one big imagination. Loulou & Lou lead every song, every fairytale and every stage show — and they can't wait to meet you.",
+    "charactersCta": "Meet the whole world",
+    "bandEyebrow": "Live, on stage",
+    "bandTitle": "Made with a real, live band",
+    "bandBody": "Every show is played live by our band of wonderfully talented musicians — no backing tracks, just real instruments and real energy in the room."
+  },
+  "sections": {
+    "music": {
+      "title": "Music & Albums",
+      "short": "Sing-along songs and full albums, made with love.",
+      "description": "From our very first songs to our newest album — original music made for little ears and grown-up hearts alike."
+    },
+    "sprookjesfilm": {
+      "title": "Sprookjesfilm",
+      "short": "A handmade fairytale film series.",
+      "description": "Our green-screen fairytale film episodes, brought to life frame by frame by our in-house animator."
+    },
+    "stories": {
+      "title": "Stories & Audiobooks",
+      "short": "Fairytales to listen to, anywhere.",
+      "description": "Cosy audiobooks and bedtime fairytales — perfect for the car, the bath, or right before lights out."
+    },
+    "theatershow": {
+      "title": "Theatershow",
+      "short": "Live on stage, with the whole band.",
+      "description": "Our sold-out theatre shows, including the Sprookjes and Sinterklaas editions, performed live with our full band."
+    },
+    "world": {
+      "title": "Meet the World",
+      "short": "Loulou, Lou and all their friends.",
+      "description": "Get to know the characters behind the songs and stories."
+    },
+    "about": {
+      "title": "About Us",
+      "short": "Who we are and where to find us.",
+      "description": "A Dutch team making music and stories for children everywhere."
+    }
+  },
+  "pages": {
+    "music": {
+      "eyebrow": "Music & Albums",
+      "title": "Songs made to sing, dance and grow along with",
+      "intro": "Over the years we've released a whole shelf of albums — from lullabies to sing-along dance tracks. Here's where to find them all.",
+      "albumsTitle": "Albums & singles",
+      "note": "Add your real album titles, cover art and release years here."
+    },
+    "sprookjesfilm": {
+      "eyebrow": "Sprookjesfilm",
+      "title": "A handmade fairytale, episode by episode",
+      "intro": "Filmed on green screen and animated entirely in-house, the Sprookjesfilm brings classic and original fairytales to the screen — one lovingly handmade episode at a time.",
+      "episodesTitle": "Episodes",
+      "note": "Add your real episode titles, thumbnails and watch links here."
+    },
+    "stories": {
+      "eyebrow": "Stories & Audiobooks",
+      "title": "Fairytales for listening ears",
+      "intro": "Our collection of audiobooks and spoken fairytales — for long car rides, quiet afternoons, and the last few minutes before sleep.",
+      "storiesTitle": "Stories",
+      "note": "Add your real story/audiobook titles and listening links here."
+    },
+    "theatershow": {
+      "eyebrow": "Theatershow",
+      "title": "Live, loud and full of wonder",
+      "intro": "Our theatershows sell out for a reason: a live band, big storytelling, and a room full of singing along. We've toured the Netherlands with our Sprookjes show and our Sinterklaas show — with more on the way.",
+      "showsTitle": "Shows",
+      "note": "Add real tour dates, venues and ticket links here.",
+      "sprookjesShow": {
+        "title": "The Sprookjes Show",
+        "description": "A live fairytale adventure with the full Loulou & Lou band."
+      },
+      "sinterklaasShow": {
+        "title": "The Sinterklaas Show",
+        "description": "Our beloved Sinterklaas theatershow, back every season."
+      }
+    },
+    "world": {
+      "eyebrow": "Meet the World",
+      "title": "The friends behind every story",
+      "intro": "Loulou & Lou are never alone — their world is full of friends, each with their own song and their own story.",
+      "note": "Add real character art, names and bios here."
+    },
+    "about": {
+      "eyebrow": "About Us",
+      "title": "A Dutch story, told to the whole world",
+      "intro": "Loulou & Lou started in the Netherlands, made by a small team who believe children's music deserves the same craft and heart as any other kind. Today our songs, films and stories travel far beyond our own front door.",
+      "bandTitle": "Our live band",
+      "bandBody": "On stage, every note is played live by our band of exceptionally talented musicians — the beating heart of every theatershow.",
+      "animatorTitle": "Our in-house animation",
+      "animatorBody": "The Sprookjesfilm is animated entirely in-house, frame by frame, by our own animator.",
+      "contactTitle": "Say hello",
+      "contactBody": "Booking a show, press enquiry, or just want to say hi? Get in touch."
+    }
+  },
+  "footer": {
+    "tagline": "Songs and stories from the world of Loulou & Lou.",
+    "sections": "Explore",
+    "follow": "Follow along",
+    "newsletterTitle": "Never miss a new song or story",
+    "newsletterPlaceholder": "Your email address",
+    "newsletterCta": "Subscribe",
+    "rights": "All rights reserved."
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "nl": "Nederlands"
+  }
+}

@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  /* Loulou & Lou — storybook palette (placeholder, tune to real brand colors) */
+  --color-parchment: #fdf6ea;
+  --color-parchment-deep: #f7ead4;
+  --color-ink: #402a4a;
+  --color-ink-soft: #6b5478;
+  --color-plum: #4a2e5c;
+  --color-coral: #f2748c;
+  --color-coral-deep: #e0567a;
+  --color-gold: #f6c453;
+  --color-gold-deep: #e3a52e;
+  --color-sage: #7fb685;
+  --color-sage-deep: #5e9a68;
+  --color-sky: #6fc3d1;
+  --color-sky-deep: #4aa3b3;
+
+  --background: var(--color-parchment);
+  --foreground: var(--color-ink);
+}
+
+@theme inline {
+  --color-parchment: var(--color-parchment);
+  --color-parchment-deep: var(--color-parchment-deep);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-plum: var(--color-plum);
+  --color-coral: var(--color-coral);
+  --color-coral-deep: var(--color-coral-deep);
+  --color-gold: var(--color-gold);
+  --color-gold-deep: var(--color-gold-deep);
+  --color-sage: var(--color-sage);
+  --color-sage-deep: var(--color-sage-deep);
+  --color-sky: var(--color-sky);
+  --color-sky-deep: var(--color-sky-deep);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-quicksand);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display), serif;
+}
+
+/* Storybook scallop divider */
+.scallop-top {
+  mask-image: radial-gradient(circle at 12px 0, transparent 12px, black 12.5px);
+  mask-size: 24px 24px;
+  mask-repeat: repeat-x;
+  mask-position: top;
+}
+
+.scallop-bottom {
+  mask-image: radial-gradient(circle at 12px 100%, transparent 12px, black 12.5px);
+  mask-size: 24px 24px;
+  mask-repeat: repeat-x;
+  mask-position: bottom;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.35; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-twinkle {
+  animation: twinkle 3.2s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}

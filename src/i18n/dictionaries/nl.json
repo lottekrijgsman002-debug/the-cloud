@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "Loulou & Lou — Een wereld vol liedjes en verhalen",
+    "description": "De magische wereld van Loulou & Lou: muziek, sprookjes, de Sprookjesfilm, luisterverhalen en de theatershow — allemaal op één plek."
+  },
+  "nav": {
+    "home": "Home",
+    "music": "Muziek",
+    "sprookjesfilm": "Sprookjesfilm",
+    "stories": "Verhalen & Luisterboeken",
+    "theatershow": "Theatershow",
+    "world": "Ontmoet de wereld",
+    "about": "Over ons"
+  },
+  "common": {
+    "listenOn": "Luister en kijk op",
+    "learnMore": "Meer ontdekken",
+    "backHome": "Terug naar de wereld",
+    "comingSoonBadge": "Binnenkort meer",
+    "openBook": "Open het sprookjesboek"
+  },
+  "hero": {
+    "eyebrow": "Welkom in",
+    "title": "De wereld van Loulou & Lou",
+    "subtitle": "Liedjes om op te dansen, sprookjes om bij in slaap te vallen, en een live band die alles tot leven brengt. Eén knus plekje op internet voor alles van Loulou & Lou.",
+    "ctaPrimary": "Stap de wereld in",
+    "ctaSecondary": "Luister naar onze muziek"
+  },
+  "home": {
+    "worldEyebrow": "Alles op één plek",
+    "worldTitle": "Zoveel te ontdekken",
+    "worldSubtitle": "We maken al jaren muziek, films, verhalen en shows, verspreid over allerlei plekken op internet. Hier komt het eindelijk allemaal samen.",
+    "listenEyebrow": "Waar je al luistert",
+    "listenTitle": "Neem ons mee",
+    "listenSubtitle": "Onze albums en liedjes staan op jouw favoriete platform — klik door en druk op play.",
+    "charactersEyebrow": "Ontmoet de vriendjes",
+    "charactersTitle": "Zeg eens hallo tegen Loulou & Lou",
+    "charactersBody": "Twee beste vrienden, één grote fantasie. Loulou & Lou staan centraal in elk liedje, elk sprookje en elke show — en ze kunnen niet wachten om jou te ontmoeten.",
+    "charactersCta": "Ontmoet de hele wereld",
+    "bandEyebrow": "Live, op het podium",
+    "bandTitle": "Gemaakt met een echte, live band",
+    "bandBody": "Elke show wordt live gespeeld door onze band van bijzonder getalenteerde muzikanten — geen playback, maar echte instrumenten en echte energie in de zaal."
+  },
+  "sections": {
+    "music": {
+      "title": "Muziek & Albums",
+      "short": "Meezingliedjes en complete albums, met liefde gemaakt.",
+      "description": "Van onze allereerste liedjes tot ons nieuwste album — originele muziek voor kleine oortjes én grote harten."
+    },
+    "sprookjesfilm": {
+      "title": "Sprookjesfilm",
+      "short": "Een handgemaakte sprookjesfilmserie.",
+      "description": "Onze greenscreen sprookjesfilm-afleveringen, beeld voor beeld tot leven gebracht door onze eigen animator."
+    },
+    "stories": {
+      "title": "Verhalen & Luisterboeken",
+      "short": "Sprookjes om overal naar te luisteren.",
+      "description": "Knusse luisterboeken en sprookjes om naar te luisteren — perfect voor in de auto, het bad, of vlak voor het slapengaan."
+    },
+    "theatershow": {
+      "title": "Theatershow",
+      "short": "Live op het podium, met de hele band.",
+      "description": "Onze uitverkochte theatershows, waaronder de Sprookjes- en Sinterklaasedities, live gespeeld met onze volledige band."
+    },
+    "world": {
+      "title": "Ontmoet de wereld",
+      "short": "Loulou, Lou en al hun vriendjes.",
+      "description": "Maak kennis met de personages achter de liedjes en verhalen."
+    },
+    "about": {
+      "title": "Over ons",
+      "short": "Wie we zijn en waar je ons vindt.",
+      "description": "Een Nederlands team dat muziek en verhalen maakt voor kinderen over de hele wereld."
+    }
+  },
+  "pages": {
+    "music": {
+      "eyebrow": "Muziek & Albums",
+      "title": "Liedjes om mee te zingen, dansen en groot te worden",
+      "intro": "In de loop der jaren brachten we een hele plank vol albums uit — van slaapliedjes tot meezingende dansnummers. Hier vind je ze allemaal.",
+      "albumsTitle": "Albums & singles",
+      "note": "Vul hier je echte albumtitels, hoesjes en releasejaren in."
+    },
+    "sprookjesfilm": {
+      "eyebrow": "Sprookjesfilm",
+      "title": "Een handgemaakt sprookje, aflevering voor aflevering",
+      "intro": "Gefilmd op greenscreen en volledig in eigen huis geanimeerd: de Sprookjesfilm brengt klassieke en originele sprookjes tot leven — elke aflevering met liefde gemaakt.",
+      "episodesTitle": "Afleveringen",
+      "note": "Vul hier je echte afleveringstitels, thumbnails en kijklinks in."
+    },
+    "stories": {
+      "eyebrow": "Verhalen & Luisterboeken",
+      "title": "Sprookjes voor luisterende oortjes",
+      "intro": "Onze verzameling luisterboeken en gesproken sprookjes — voor lange autoritjes, rustige middagen en de laatste minuutjes voor het slapengaan.",
+      "storiesTitle": "Verhalen",
+      "note": "Vul hier je echte verhaal- en luisterboektitels en luisterlinks in."
+    },
+    "theatershow": {
+      "eyebrow": "Theatershow",
+      "title": "Live, vol energie en vol verwondering",
+      "intro": "Onze theatershows zitten niet voor niets vol: een live band, groots verteld, en een zaal die uit volle borst meezingt. We toerden door Nederland met onze Sprookjesshow én onze Sinterklaasshow — en er komt meer aan.",
+      "showsTitle": "Shows",
+      "note": "Vul hier echte speeldata, locaties en ticketlinks in.",
+      "sprookjesShow": {
+        "title": "De Sprookjesshow",
+        "description": "Een live sprookjesavontuur met de volledige Loulou & Lou-band."
+      },
+      "sinterklaasShow": {
+        "title": "De Sinterklaasshow",
+        "description": "Onze geliefde Sinterklaas-theatershow, elk seizoen terug."
+      }
+    },
+    "world": {
+      "eyebrow": "Ontmoet de wereld",
+      "title": "De vriendjes achter elk verhaal",
+      "intro": "Loulou & Lou zijn nooit alleen — hun wereld zit vol vriendjes, elk met hun eigen liedje en hun eigen verhaal.",
+      "note": "Vul hier echte personage-illustraties, namen en bio's in."
+    },
+    "about": {
+      "eyebrow": "Over ons",
+      "title": "Een Nederlands verhaal, verteld aan de hele wereld",
+      "intro": "Loulou & Lou begon in Nederland, gemaakt door een klein team dat gelooft dat kindermuziek evenveel vakmanschap en hart verdient als alle andere muziek. Inmiddels reizen onze liedjes, films en verhalen ver voorbij onze eigen voordeur.",
+      "bandTitle": "Onze live band",
+      "bandBody": "Op het podium wordt elke noot live gespeeld door onze band van bijzonder getalenteerde muzikanten — het kloppende hart van elke theatershow.",
+      "animatorTitle": "Onze eigen animatie",
+      "animatorBody": "De Sprookjesfilm wordt volledig in eigen huis geanimeerd, beeld voor beeld, door onze eigen animator.",
+      "contactTitle": "Zeg eens hallo",
+      "contactBody": "Een show boeken, een persvraag, of gewoon even gedag zeggen? Neem contact op."
+    }
+  },
+  "footer": {
+    "tagline": "Liedjes en verhalen uit de wereld van Loulou & Lou.",
+    "sections": "Ontdek",
+    "follow": "Volg ons",
+    "newsletterTitle": "Mis nooit meer een nieuw liedje of verhaal",
+    "newsletterPlaceholder": "Jouw e-mailadres",
+    "newsletterCta": "Aanmelden",
+    "rights": "Alle rechten voorbehouden."
+  },
+  "language": {
+    "label": "Taal",
+    "en": "English",
+    "nl": "Nederlands"
+  }
+}
