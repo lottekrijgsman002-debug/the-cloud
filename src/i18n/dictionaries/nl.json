@@ -4,6 +4,7 @@
     "description": "De magische wereld van Loulou & Lou: muziek, sprookjes, de Sprookjesfilm, luisterverhalen en de theatershow — allemaal op één plek."
   },
   "nav": {
+    "menu": "Menu",
     "home": "Home",
     "music": "Muziek",
     "sprookjesfilm": "Sprookjesfilm",
@@ -22,7 +23,7 @@
   "hero": {
     "eyebrow": "Welkom in",
     "title": "De wereld van Loulou & Lou",
-    "subtitle": "Liedjes om op te dansen, sprookjes om bij in slaap te vallen, en een live band die alles tot leven brengt. Eén knus plekje op internet voor alles van Loulou & Lou.",
+    "subtitle": "Verantwoorde luistertijd: liedjes, sprookjes en rustgevende muzikale meditaties, gemaakt met een echte live band. Eén knus plekje op internet voor alles van Loulou & Lou.",
     "ctaPrimary": "Stap de wereld in",
     "ctaSecondary": "Luister naar onze muziek"
   },
@@ -124,8 +125,44 @@
       "bandBody": "Op het podium wordt elke noot live gespeeld door onze band van bijzonder getalenteerde muzikanten — het kloppende hart van elke theatershow.",
       "animatorTitle": "Onze eigen animatie",
       "animatorBody": "De Sprookjesfilm wordt volledig in eigen huis geanimeerd, beeld voor beeld, door onze eigen animator.",
+      "givingBackTitle": "Loulou & Lou geeft iets terug",
+      "givingBackBody": "Wij willen kinderharten veroveren met de liefde voor echte muziek en verbeelding. En daar doen we echt alles voor. Zo zetten we regelmatig de tandjes in een prachtig maatschappelijk project, om écht élk kinderhart te bereiken.",
+      "givingBackBadges": [
+        "Meester in klassieke muziek",
+        "Braillenboek Lux & Louise",
+        "Loulou & Lou de wereld rond",
+        "Album Ronald McDonald-Huis",
+        "Gratis naar het theater"
+      ],
       "contactTitle": "Zeg eens hallo",
       "contactBody": "Een show boeken, een persvraag, of gewoon even gedag zeggen? Neem contact op."
+    }
+  },
+  "characters": {
+    "loulou": {
+      "name": "Loulou",
+      "role": "De verteller",
+      "description": "Nieuwsgierig, lief en heeft altijd wel een sprookje of avontuur achter de hand."
+    },
+    "lou": {
+      "name": "Lou",
+      "role": "De beste vriend",
+      "description": "Loulou's maatje voor elk liedje, verhaal en meezingmoment."
+    },
+    "guruWoof": {
+      "name": "Guru Woof",
+      "role": "De meditatiegids",
+      "description": "Leidt de rustige, muzikale meditatiemomentjes die helpen bij het tot rust komen."
+    },
+    "maestroMozy": {
+      "name": "Maestro Mozy",
+      "role": "Meester in klassieke muziek",
+      "description": "Speelt piano, houdt van de klassiekers en brengt een beetje concertzaalmagie in elk liedje."
+    },
+    "jazzCat": {
+      "name": "Jazz Cat",
+      "role": "De jazzmuzikant",
+      "description": "Cool, relaxed en altijd in voor een geïmproviseerd meezingmoment op de gitaar."
     }
   },
   "footer": {

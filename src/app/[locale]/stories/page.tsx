@@ -19,12 +19,13 @@ export default async function StoriesPage({
         title={p.title}
         intro={p.intro}
         backLabel={dict.common.backHome}
-        accentClassName="text-gold-deep"
+        bgClassName="bg-green"
+        tone="dark"
       />
 
-      <section className="bg-parchment">
+      <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-14">
-          <h2 className="text-center font-display text-2xl font-semibold text-plum">
+          <h2 className="text-center font-display text-2xl font-semibold uppercase text-ink">
             {p.storiesTitle}
           </h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

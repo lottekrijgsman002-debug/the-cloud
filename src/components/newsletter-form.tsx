@@ -13,11 +13,11 @@ export function NewsletterForm({
         type="email"
         required
         placeholder={placeholder}
-        className="w-full min-w-0 rounded-full bg-parchment/10 px-4 py-2 text-sm text-parchment placeholder:text-parchment/50 outline-none ring-gold focus:ring-2"
+        className="w-full min-w-0 rounded-full bg-paper/10 px-4 py-2 text-sm text-paper placeholder:text-paper/50 outline-none ring-orange focus:ring-2"
       />
       <button
         type="submit"
-        className="shrink-0 rounded-full bg-coral px-4 py-2 text-sm font-semibold text-plum transition-colors hover:bg-coral-deep"
+        className="shrink-0 rounded-full bg-orange px-4 py-2 text-sm font-display font-semibold uppercase text-ink transition-colors hover:bg-orange-deep"
       >
         {cta}
       </button>

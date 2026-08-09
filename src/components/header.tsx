@@ -2,15 +2,23 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { sections } from "@/data/site";
-import { LanguageSwitcher } from "@/components/language-switcher";
 import { SectionIcon } from "@/components/section-icon";
-import { MenuIcon, CloseIcon, StarIcon } from "@/components/icons";
+import { MenuIcon, CloseIcon } from "@/components/icons";
+import { Logo } from "@/components/logo";
 
 export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const langHref = (l: "nl" | "en") => {
+    const segments = pathname.split("/");
+    segments[1] = l;
+    return segments.join("/") || `/${l}`;
+  };
 
   const navItems = sections.map((s) => ({
     key: s.key,
@@ -19,61 +27,63 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   }));
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink/10 bg-parchment/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
-        <Link
-          href={`/${locale}`}
-          className="flex items-center gap-2 font-display text-xl font-semibold tracking-tight text-plum"
+    <header className="sticky top-0 z-50 bg-paper">
+      <div className="mx-auto grid max-w-6xl grid-cols-3 items-center px-5 py-3">
+        <button
+          className="flex items-center gap-2 justify-self-start font-display text-sm font-semibold uppercase tracking-wide text-ink"
+          aria-label="Menu"
+          onClick={() => setOpen(true)}
         >
-          <StarIcon className="h-5 w-5 text-gold" />
-          Loulou &amp; Lou
+          <MenuIcon className="h-6 w-6" />
+          {dict.nav.menu}
+        </button>
+
+        <Link href={`/${locale}`} className="justify-self-center">
+          <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.key}
-              href={item.href}
-              className="flex items-center gap-1.5 text-sm font-semibold text-ink-soft transition-colors hover:text-coral-deep"
-            >
-              <SectionIcon section={item.key} className="h-4 w-4 opacity-70" />
-              {item.label}
-            </Link>
+        <div className="flex items-center gap-2 justify-self-end font-display text-sm font-semibold">
+          {(["nl", "en"] as const).map((l, i) => (
+            <span key={l} className="flex items-center gap-2">
+              {i > 0 && <span className="text-ink/30">|</span>}
+              <Link
+                href={langHref(l)}
+                aria-current={l === locale}
+                className={l === locale ? "text-ink" : "text-ink/40 hover:text-ink"}
+              >
+                {l.toUpperCase()}
+              </Link>
+            </span>
           ))}
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <div className="hidden sm:block">
-            <LanguageSwitcher locale={locale} />
-          </div>
-          <button
-            className="rounded-full border border-ink/15 p-2 lg:hidden"
-            aria-label="Menu"
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <CloseIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
-          </button>
         </div>
       </div>
 
       {open && (
-        <div className="border-t border-ink/10 bg-parchment px-5 pb-5 lg:hidden">
-          <nav className="flex flex-col gap-1 pt-3">
-            {navItems.map((item) => (
+        <div className="fixed inset-0 z-50 flex flex-col bg-ink text-paper">
+          <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-3">
+            <span className="font-display text-sm font-semibold uppercase tracking-wide">
+              {dict.nav.menu}
+            </span>
+            <Logo variant="light" />
+            <button aria-label="Close" onClick={() => setOpen(false)}>
+              <CloseIcon className="h-7 w-7" />
+            </button>
+          </div>
+
+          <nav className="mx-auto flex w-full max-w-2xl flex-1 flex-col items-center justify-center gap-2 px-5">
+            {navItems.map((item, i) => (
               <Link
                 key={item.key}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-semibold text-ink-soft hover:bg-ink/5"
+                className="group flex w-full items-center justify-center gap-3 py-3 font-display text-3xl font-semibold uppercase tracking-wide transition-colors hover:text-orange sm:text-4xl"
+                style={{ animationDelay: `${i * 0.05}s` }}
               >
-                <SectionIcon section={item.key} className="h-4 w-4 opacity-70" />
+                <SectionIcon section={item.key} className="h-7 w-7 opacity-0 transition-opacity group-hover:opacity-100" />
                 {item.label}
               </Link>
             ))}
           </nav>
-          <div className="mt-3 sm:hidden">
-            <LanguageSwitcher locale={locale} />
-          </div>
         </div>
       )}
     </header>

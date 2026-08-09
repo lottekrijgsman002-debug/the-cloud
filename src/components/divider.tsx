@@ -1,50 +1,47 @@
-export function WaveDivider({
-  className,
-  color = "var(--color-parchment-deep)",
-  flip = false,
-}: {
-  className?: string;
-  color?: string;
-  flip?: boolean;
-}) {
-  return (
-    <div className={className} aria-hidden="true">
-      <svg
-        viewBox="0 0 1440 60"
-        preserveAspectRatio="none"
-        className={`h-10 w-full ${flip ? "rotate-180" : ""}`}
-      >
-        <path
-          d="M0 30 C 180 60 360 0 540 30 C 720 60 900 0 1080 30 C 1260 60 1350 15 1440 30 L1440 60 L0 60 Z"
-          fill={color}
-        />
-      </svg>
-    </div>
-  );
-}
+import {
+  StarIcon,
+  HeartIcon,
+  SpiralIcon,
+  RainbowIcon,
+  CloudIcon,
+  BookIcon,
+} from "@/components/icons";
 
-export function StarField({ className }: { className?: string }) {
-  const stars = [
-    { top: "12%", left: "8%", size: 10, delay: "0s" },
-    { top: "22%", left: "88%", size: 14, delay: "0.6s" },
-    { top: "62%", left: "4%", size: 8, delay: "1.1s" },
-    { top: "75%", left: "92%", size: 12, delay: "1.7s" },
-    { top: "8%", left: "45%", size: 8, delay: "0.3s" },
-    { top: "85%", left: "60%", size: 10, delay: "2s" },
+const doodleIcons = [StarIcon, HeartIcon, SpiralIcon, RainbowIcon, CloudIcon, BookIcon];
+
+export function DoodleField({ className }: { className?: string }) {
+  const doodles = [
+    { top: "10%", left: "6%", size: 34, rotate: -12, icon: 2 },
+    { top: "18%", left: "90%", size: 30, rotate: 10, icon: 0 },
+    { top: "58%", left: "3%", size: 28, rotate: 8, icon: 4 },
+    { top: "72%", left: "93%", size: 32, rotate: -8, icon: 1 },
+    { top: "4%", left: "42%", size: 22, rotate: 15, icon: 0 },
+    { top: "85%", left: "55%", size: 26, rotate: -6, icon: 3 },
+    { top: "40%", left: "12%", size: 24, rotate: 20, icon: 1 },
+    { top: "30%", left: "78%", size: 26, rotate: -14, icon: 5 },
   ];
   return (
-    <div className={`pointer-events-none absolute inset-0 overflow-hidden ${className ?? ""}`} aria-hidden="true">
-      {stars.map((s, i) => (
-        <span
-          key={i}
-          className="absolute animate-twinkle text-gold"
-          style={{ top: s.top, left: s.left, animationDelay: s.delay }}
-        >
-          <svg width={s.size} height={s.size} viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 1.5l2.6 6.9 7.4.5-5.7 4.8 1.9 7.2L12 16.9l-6.2 4-1.9-7.2-5.7-4.8 7.4-.5L12 1.5Z" />
-          </svg>
-        </span>
-      ))}
+    <div
+      className={`pointer-events-none absolute inset-0 overflow-hidden text-white/25 ${className ?? ""}`}
+      aria-hidden="true"
+    >
+      {doodles.map((d, i) => {
+        const Icon = doodleIcons[d.icon];
+        return (
+          <Icon
+            key={i}
+            className="absolute animate-twinkle"
+            style={{
+              top: d.top,
+              left: d.left,
+              width: d.size,
+              height: d.size,
+              transform: `rotate(${d.rotate}deg)`,
+              animationDelay: `${i * 0.3}s`,
+            }}
+          />
+        );
+      })}
     </div>
   );
 }

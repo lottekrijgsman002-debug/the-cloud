@@ -110,6 +110,46 @@ export function InfoHeartIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+export function HeartIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
+      <path d="M12 20.5S3 15 3 8.9A4.9 4.9 0 0 1 12 6a4.9 4.9 0 0 1 9 2.9c0 6.1-9 11.6-9 11.6Z" />
+    </svg>
+  );
+}
+
+export function SpiralIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
+      <path d="M12 3a9 9 0 1 1-6.4 2.6M12 7a5 5 0 1 1-3.5 1.5M12 11a1 1 0 1 1-.7.3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function RainbowIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
+      <path d="M2 19a10 10 0 0 1 20 0M5.5 19a6.5 6.5 0 0 1 13 0M9 19a3 3 0 0 1 6 0" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function CloudIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
+      <path d="M6.5 18a4 4 0 0 1-.5-8 5 5 0 0 1 9.6-1.6A4.5 4.5 0 0 1 17.5 18h-11Z" />
+    </svg>
+  );
+}
+
+export function SparkleBurstIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
+      <path d="M12 3v6M12 15v6M3 12h6M15 12h6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M18.4 5.6l-4.2 4.2M9.8 14.2l-4.2 4.2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function ChevronRight(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" {...props}>

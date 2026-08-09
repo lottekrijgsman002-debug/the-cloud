@@ -22,10 +22,11 @@ export default async function MusicPage({
         title={p.title}
         intro={p.intro}
         backLabel={dict.common.backHome}
-        accentClassName="text-coral-deep"
+        bgClassName="bg-mustard"
+        tone="dark"
       />
 
-      <section className="bg-parchment">
+      <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-14">
           <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-3">
             <PlatformLink href={siteConfig.social.youtube} label="YouTube" Icon={YoutubeIcon} colorClass="bg-[#ff0033]/10 text-[#ff0033]" />
@@ -33,7 +34,7 @@ export default async function MusicPage({
             <PlatformLink href={siteConfig.social.appleMusic} label="Apple Music" Icon={AppleMusicIcon} colorClass="bg-[#fb5c74]/10 text-[#fb5c74]" />
           </div>
 
-          <h2 className="mt-16 text-center font-display text-2xl font-semibold text-plum">
+          <h2 className="mt-16 text-center font-display text-2xl font-semibold uppercase text-ink">
             {p.albumsTitle}
           </h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

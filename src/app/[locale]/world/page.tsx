@@ -1,6 +1,6 @@
 import { resolveLocale } from "@/i18n/resolve-locale";
 import { PageHeader } from "@/components/page-header";
-import { EditableNote } from "@/components/placeholder-card";
+import { CharacterAvatar, type CharacterVariant } from "@/components/character-avatar";
 
 export default async function WorldPage({
   params,
@@ -10,11 +10,12 @@ export default async function WorldPage({
   const { locale, dict } = await resolveLocale(params);
   const p = dict.pages.world;
 
-  const characters = [
-    { name: "Loulou", emoji: "🦊", color: "bg-coral" },
-    { name: "Lou", emoji: "🐻", color: "bg-sky" },
-    { name: "?", emoji: "✨", color: "bg-gold" },
-    { name: "?", emoji: "✨", color: "bg-sage" },
+  const characters: { variant: CharacterVariant; key: keyof typeof dict.characters }[] = [
+    { variant: "loulou", key: "loulou" },
+    { variant: "lou", key: "lou" },
+    { variant: "guru-woof", key: "guruWoof" },
+    { variant: "maestro-mozy", key: "maestroMozy" },
+    { variant: "jazz-cat", key: "jazzCat" },
   ];
 
   return (
@@ -25,27 +26,34 @@ export default async function WorldPage({
         title={p.title}
         intro={p.intro}
         backLabel={dict.common.backHome}
-        accentClassName="text-coral-deep"
+        bgClassName="bg-magenta"
+        tone="light"
       />
 
-      <section className="bg-parchment">
+      <section className="bg-paper">
         <div className="mx-auto max-w-5xl px-5 py-14">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {characters.map((c, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center rounded-3xl border-2 border-ink/10 bg-white/60 p-6 text-center shadow-sm"
-              >
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {characters.map((c) => {
+              const character = dict.characters[c.key];
+              return (
                 <div
-                  className={`flex h-24 w-24 items-center justify-center rounded-full text-4xl shadow-inner ${c.color}`}
+                  key={c.key}
+                  className="flex flex-col items-center rounded-3xl border-2 border-ink p-6 text-center shadow-[4px_4px_0_var(--color-ink)]"
                 >
-                  {c.emoji}
+                  <CharacterAvatar variant={c.variant} size={104} />
+                  <h3 className="mt-4 font-display text-lg font-semibold uppercase text-ink">
+                    {character.name}
+                  </h3>
+                  <p className="mt-1 font-display text-xs font-semibold uppercase tracking-wide text-magenta-deep">
+                    {character.role}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                    {character.description}
+                  </p>
                 </div>
-                <h3 className="mt-4 font-display text-lg font-semibold text-plum">{c.name}</h3>
-              </div>
-            ))}
+              );
+            })}
           </div>
-          <EditableNote>{p.note}</EditableNote>
         </div>
       </section>
     </>

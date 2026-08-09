@@ -4,6 +4,7 @@
     "description": "The magical world of Loulou & Lou: music, fairytales, the Sprookjesfilm, audiobooks and the theatershow — all in one place."
   },
   "nav": {
+    "menu": "Menu",
     "home": "Home",
     "music": "Music",
     "sprookjesfilm": "Sprookjesfilm",
@@ -22,7 +23,7 @@
   "hero": {
     "eyebrow": "Welcome to",
     "title": "The World of Loulou & Lou",
-    "subtitle": "Songs to dance to, fairytales to fall asleep in, and a live band that makes it all come alive. One cosy corner of the internet for everything Loulou & Lou.",
+    "subtitle": "Screen-free listening time: songs, fairytales and calming musical meditations, made with a real live band. One cosy corner of the internet for everything Loulou & Lou.",
     "ctaPrimary": "Step into the world",
     "ctaSecondary": "Listen to our music"
   },
@@ -124,8 +125,44 @@
       "bandBody": "On stage, every note is played live by our band of exceptionally talented musicians — the beating heart of every theatershow.",
       "animatorTitle": "Our in-house animation",
       "animatorBody": "The Sprookjesfilm is animated entirely in-house, frame by frame, by our own animator.",
+      "givingBackTitle": "Loulou & Lou gives something back",
+      "givingBackBody": "We want to win children's hearts with a love of real music and imagination — and we put our money where our mouth is with projects like these.",
+      "givingBackBadges": [
+        "Master of classical music",
+        "Braille book Lux & Louise",
+        "Loulou & Lou around the world",
+        "Ronald McDonald House album",
+        "Free trip to the theatre"
+      ],
       "contactTitle": "Say hello",
       "contactBody": "Booking a show, press enquiry, or just want to say hi? Get in touch."
+    }
+  },
+  "characters": {
+    "loulou": {
+      "name": "Loulou",
+      "role": "The storyteller",
+      "description": "Curious, kind and always got a fairytale or an adventure up her sleeve."
+    },
+    "lou": {
+      "name": "Lou",
+      "role": "The best friend",
+      "description": "Loulou's partner in crime — up for any song, story or singalong."
+    },
+    "guruWoof": {
+      "name": "Guru Woof",
+      "role": "The meditation guide",
+      "description": "Leads the calm, musical meditation moments that help little ones wind down."
+    },
+    "maestroMozy": {
+      "name": "Maestro Mozy",
+      "role": "Master of classical music",
+      "description": "Plays piano, loves the classics, and brings a little concert hall magic to every song."
+    },
+    "jazzCat": {
+      "name": "Jazz Cat",
+      "role": "The jazz musician",
+      "description": "Smooth, cool and always ready for an improvised singalong on the guitar."
     }
   },
   "footer": {

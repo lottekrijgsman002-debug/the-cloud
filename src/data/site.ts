@@ -22,10 +22,10 @@ export type SectionKey =
   | "about";
 
 export const sections: { key: SectionKey; href: string; accent: string }[] = [
-  { key: "music", href: "/music", accent: "coral" },
-  { key: "sprookjesfilm", href: "/sprookjesfilm", accent: "sky" },
-  { key: "stories", href: "/stories", accent: "gold" },
-  { key: "theatershow", href: "/theatershow", accent: "sage" },
-  { key: "world", href: "/world", accent: "coral" },
-  { key: "about", href: "/about", accent: "sky" },
+  { key: "music", href: "/music", accent: "mustard" },
+  { key: "sprookjesfilm", href: "/sprookjesfilm", accent: "orange" },
+  { key: "stories", href: "/stories", accent: "green" },
+  { key: "theatershow", href: "/theatershow", accent: "red" },
+  { key: "world", href: "/world", accent: "magenta" },
+  { key: "about", href: "/about", accent: "ink" },
 ];

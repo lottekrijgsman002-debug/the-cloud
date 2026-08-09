@@ -20,23 +20,24 @@ export default async function SprookjesfilmPage({
         title={p.title}
         intro={p.intro}
         backLabel={dict.common.backHome}
-        accentClassName="text-sky-deep"
+        bgClassName="bg-orange"
+        tone="dark"
       />
 
-      <section className="bg-parchment">
+      <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-14">
           <div className="flex justify-center">
             <a
               href={siteConfig.social.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-sky px-6 py-3 font-semibold text-plum shadow-md shadow-sky/30 transition-transform hover:-translate-y-0.5"
+              className="rounded-full bg-ink px-6 py-3 font-display font-semibold uppercase text-white shadow-md transition-transform hover:-translate-y-0.5"
             >
               {dict.common.listenOn} YouTube
             </a>
           </div>
 
-          <h2 className="mt-14 text-center font-display text-2xl font-semibold text-plum">
+          <h2 className="mt-14 text-center font-display text-2xl font-semibold uppercase text-ink">
             {p.episodesTitle}
           </h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

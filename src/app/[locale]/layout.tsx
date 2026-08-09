@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Quicksand } from "next/font/google";
+import { Fredoka, Caveat, Nunito } from "next/font/google";
 import { notFound } from "next/navigation";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
@@ -7,15 +7,19 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import "../globals.css";
 
-const fraunces = Fraunces({
+const fredoka = Fredoka({
   subsets: ["latin"],
-  variable: "--font-fraunces",
-  axes: ["opsz", "SOFT"],
+  variable: "--font-fredoka",
 });
 
-const quicksand = Quicksand({
+const caveat = Caveat({
   subsets: ["latin"],
-  variable: "--font-quicksand",
+  variable: "--font-caveat",
+});
+
+const nunito = Nunito({
+  subsets: ["latin"],
+  variable: "--font-nunito",
 });
 
 export function generateStaticParams() {
@@ -50,7 +54,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${fraunces.variable} ${quicksand.variable} antialiased`}>
+      <body className={`${fredoka.variable} ${caveat.variable} ${nunito.variable} antialiased`}>
         <Header locale={locale} dict={dict} />
         <main>{children}</main>
         <Footer locale={locale} dict={dict} />
