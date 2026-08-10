@@ -40,24 +40,19 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-display: var(--font-baloo);
-  --font-script: var(--font-caveat);
-  --font-body: var(--font-nunito);
+  --font-display: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-body), serif;
 }
 
 h1, h2, h3, h4, .font-display {
   font-family: var(--font-display), sans-serif;
   font-weight: 600;
-}
-
-.font-script {
-  font-family: var(--font-script), cursive;
 }
 
 @keyframes float-slow {

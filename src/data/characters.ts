@@ -16,6 +16,7 @@ export const characters: Character[] = [
       nl: "Twee beste vrienden, altijd op zoek naar het volgende avontuur.",
       en: "Two best friends, always on the hunt for the next adventure.",
     },
+    portrait: "/characters/loulou-lou.jpg",
   },
   {
     id: "guru-woof",
@@ -31,6 +32,7 @@ export const characters: Character[] = [
       nl: "Rustig ademen, samen met Guru Woof. Tijd om tot rust te komen.",
       en: "Slow breaths, together with Guru Woof. Time to wind all the way down.",
     },
+    portrait: "/characters/guru-woof.jpg",
   },
   {
     id: "maestro-mozy",
@@ -46,6 +48,7 @@ export const characters: Character[] = [
       nl: "Een beetje concertzaalmagie, gespeeld op de piano, voor elk klein oor.",
       en: "A little concert-hall magic, played on the piano, for every little ear.",
     },
+    portrait: "/characters/maestro-mozy.jpg",
   },
   {
     id: "jazzcat-louis",
@@ -61,6 +64,7 @@ export const characters: Character[] = [
       nl: "Cool, relaxed en altijd in voor een geïmproviseerd deuntje op de gitaar.",
       en: "Cool, relaxed and always ready for an improvised tune on the guitar.",
     },
+    portrait: "/characters/jazzcat-louis.jpg",
   },
   {
     id: "captain-clock",

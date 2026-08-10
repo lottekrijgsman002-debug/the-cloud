@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getLocale } from "@/lib/get-locale";
 import { t } from "@/lib/locale";
@@ -29,10 +30,20 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
       <section className={`relative overflow-hidden ${accent.bg}`}>
         <SkyScene />
         <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-6 px-5 py-16 text-center sm:py-20">
-          <div className="flex h-32 w-32 items-center justify-center rounded-full border-[3px] border-dashed border-white/70 bg-white/15 shadow-md">
-            <span className={`font-display px-3 text-center text-base font-semibold ${accent.onBg}`}>
-              {character.name}
-            </span>
+          <div className="flex h-32 w-32 overflow-hidden rounded-full border-[3px] border-white/70 bg-white/15 shadow-md">
+            {character.portrait ? (
+              <Image
+                src={character.portrait}
+                alt={character.name}
+                width={128}
+                height={128}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <span className={`flex w-full items-center justify-center font-display px-3 text-center text-base font-semibold ${accent.onBg}`}>
+                {character.name}
+              </span>
+            )}
           </div>
           <div className="flex flex-wrap justify-center gap-2">
             {character.moodWords.map((word) => (

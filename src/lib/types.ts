@@ -22,6 +22,8 @@ export interface Character {
   moodWords: Localized[];
   accentToken: "magenta" | "green" | "mustard" | "orange";
   voiceLine: Localized;
+  /** Path under /public to the character's real illustration, if exported yet. */
+  portrait?: string;
 }
 
 export interface ContentItem {
