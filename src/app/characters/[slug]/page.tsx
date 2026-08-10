@@ -52,8 +52,8 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
             {character.moodWords.map((word) => (
               <span
                 key={word.en}
-                className={`rounded-full bg-white px-4 py-2 font-display text-sm font-semibold ${accent.text} border-2 transition-all hover:scale-110 hover:shadow-lg hover:border-opacity-100`}
-                style={{ borderColor: accent.borderColor, borderOpacity: 0.4 } as React.CSSProperties}
+                className={`rounded-full bg-white px-4 py-2 font-display text-sm font-semibold ${accent.text} border-2 transition-all hover:scale-110 hover:shadow-lg`}
+                style={{ borderColor: accent.borderColorSoft }}
               >
                 {t(word, locale)}
               </span>

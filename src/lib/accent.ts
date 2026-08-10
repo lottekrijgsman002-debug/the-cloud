@@ -16,6 +16,8 @@ type AccentClasses = {
   pattern: string;
   /** CSS color value for borders/accents */
   borderColor: string;
+  /** Semi-transparent border color for subtle styling */
+  borderColorSoft: string;
 };
 
 export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
@@ -26,6 +28,7 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     textDeep: "text-magenta-deep",
     border: "border-magenta",
     borderColor: "#a11f8a",
+    borderColorSoft: "rgba(161, 31, 138, 0.4)",
     onBg: "text-white",
     onBgSoft: "text-white/80",
     pattern: "pattern-loulou",
@@ -37,6 +40,7 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     textDeep: "text-green-deep",
     border: "border-green",
     borderColor: "#33ae4c",
+    borderColorSoft: "rgba(51, 174, 76, 0.4)",
     onBg: "text-white",
     onBgSoft: "text-white/80",
     pattern: "pattern-guru",
@@ -48,6 +52,7 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     textDeep: "text-mustard-deep",
     border: "border-mustard",
     borderColor: "#c2ab00",
+    borderColorSoft: "rgba(194, 171, 0, 0.4)",
     onBg: "text-ink",
     onBgSoft: "text-ink-soft",
     pattern: "pattern-mozy",
@@ -59,6 +64,7 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     textDeep: "text-orange-deep",
     border: "border-orange",
     borderColor: "#f17422",
+    borderColorSoft: "rgba(241, 116, 34, 0.4)",
     onBg: "text-white",
     onBgSoft: "text-white/80",
     pattern: "pattern-clock",
