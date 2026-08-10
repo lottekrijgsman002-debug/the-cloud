@@ -31,8 +31,9 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
       <section className={`relative overflow-hidden ${accent.bg}`}>
         <SkyScene />
         <CharacterDecorations character={character} />
+        <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent`}></div>
         <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-8 px-5 py-20 text-center sm:gap-10 sm:py-28">
-          <div className="flex h-48 w-48 overflow-hidden rounded-full border-[4px] border-white/70 bg-white/15 shadow-lg sm:h-56 sm:w-56">
+          <div className={`flex h-48 w-48 overflow-hidden rounded-full border-[6px] ${accent.border} bg-white/15 shadow-2xl sm:h-56 sm:w-56 ring-4 ring-white/20`}>
             {character.portrait ? (
               <Image
                 src={character.portrait}
@@ -51,13 +52,13 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
             {character.moodWords.map((word) => (
               <span
                 key={word.en}
-                className={`rounded-full bg-white px-4 py-2 font-display text-sm font-semibold ${accent.text} transition-transform hover:scale-110`}
+                className={`rounded-full bg-white px-4 py-2 font-display text-sm font-semibold ${accent.text} border-2 ${accent.border} transition-all hover:scale-110 hover:shadow-lg hover:border-opacity-100 border-opacity-40`}
               >
                 {t(word, locale)}
               </span>
             ))}
           </div>
-          <h1 className={`font-display text-5xl font-bold sm:text-6xl leading-tight ${accent.onBg}`}>{character.name}</h1>
+          <h1 className={`font-display text-5xl font-bold sm:text-6xl leading-tight ${accent.onBg} relative inline-block pb-3 after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-1 after:w-32 after:bg-current after:rounded-full after:opacity-30`}>{character.name}</h1>
           <p className={`max-w-2xl text-xl leading-relaxed ${accent.onBgSoft}`}>{t(character.voiceLine, locale)}</p>
         </div>
       </section>
