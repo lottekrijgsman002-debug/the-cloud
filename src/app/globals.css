@@ -95,6 +95,24 @@ h1, h2, h3, h4, .font-display {
   box-shadow: 0 20px 40px -8px var(--glow-color), 0 0 0 3px var(--glow-color-solid);
 }
 
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-bob {
+  animation: bob 4.5s ease-in-out infinite;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-card-in {
+  animation: card-in 600ms ease-out both;
+}
+
 /* Character-specific background patterns — bold enough to read as texture from across the room */
 .pattern-loulou {
   background-image:

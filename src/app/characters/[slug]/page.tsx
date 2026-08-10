@@ -8,6 +8,8 @@ import { characters } from "@/data/characters";
 import { accentClasses } from "@/lib/accent";
 import { SkyScene } from "@/components/sky-scene";
 import { CharacterDecorations } from "@/components/character-decorations";
+import { WaveDivider } from "@/components/wave-divider";
+import { AmbientSparkles } from "@/components/ambient-sparkles";
 import { Shelf } from "@/components/content/shelf";
 
 export function generateStaticParams() {
@@ -31,9 +33,9 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
       <section className={`relative overflow-hidden ${accent.bg} ${accent.pattern}`}>
         <SkyScene />
         <CharacterDecorations character={character} />
-        <div className="absolute bottom-0 left-0 right-0" style={{ height: "4px", background: `linear-gradient(to right, transparent, ${accent.borderColorStrong}, transparent)` }}></div>
+        <WaveDivider />
         <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-8 px-5 py-20 text-center sm:gap-10 sm:py-28">
-          <div className="flex h-48 w-48 overflow-hidden rounded-full bg-white/15 sm:h-56 sm:w-56" style={{ borderWidth: "12px", borderColor: accent.borderColorStrong, boxShadow: `0 0 0 4px rgba(255,255,255,0.5), 0 0 24px ${accent.borderColorStrong}80, 0 12px 24px rgba(0,0,0,0.3)` }}>
+          <div className="animate-bob flex h-48 w-48 overflow-hidden rounded-full bg-white/15 sm:h-56 sm:w-56" style={{ borderWidth: "12px", borderColor: accent.borderColorStrong, boxShadow: `0 0 0 4px rgba(255,255,255,0.5), 0 0 24px ${accent.borderColorStrong}80, 0 12px 24px rgba(0,0,0,0.3)` }}>
             {character.portrait ? (
               <Image
                 src={character.portrait}
@@ -71,7 +73,8 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl space-y-14 px-5 py-14">
+      <div className="relative mx-auto max-w-6xl space-y-14 px-5 py-14">
+        <AmbientSparkles color={accent.borderColorStrong} />
         <Shelf
           title={`${t(ui.character.listenWith, locale)} ${character.name}`}
           items={listenItems}

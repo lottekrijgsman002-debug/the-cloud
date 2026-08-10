@@ -43,25 +43,25 @@ export function ContentCard({
           <FavoriteButton contentId={item.id} size="sm" />
         </div>
         {featured && (
-          <span
-            className="absolute left-2 bottom-2 rounded-full px-3 py-1 font-display text-[0.65rem] font-bold uppercase tracking-wide text-white shadow-md"
+          <div
+            className="absolute -left-12 top-4 w-40 -rotate-45 py-1.5 text-center font-display text-[0.65rem] font-bold uppercase tracking-wider text-white shadow-lg"
             style={{ backgroundColor: accent.borderColorStrong }}
           >
             {t(ui.common.featuredBadge, locale)}
-          </span>
+          </div>
         )}
         {item.isNew && (
-          <span className="absolute left-2 top-2 rounded-full bg-white/90 px-2.5 py-1 font-display text-[0.65rem] font-semibold text-ink">
+          <span className={`absolute left-2 rounded-full bg-white/90 px-2.5 py-1 font-display text-[0.65rem] font-semibold text-ink ${featured ? "top-9" : "top-2"}`}>
             {t(ui.common.newBadge, locale)}
           </span>
         )}
         {item.isBedtimePick && !item.isNew && (
-          <span className="absolute left-2 top-2 rounded-full bg-white/90 px-2.5 py-1 font-display text-[0.65rem] font-semibold text-ink">
+          <span className={`absolute left-2 rounded-full bg-white/90 px-2.5 py-1 font-display text-[0.65rem] font-semibold text-ink ${featured ? "top-9" : "top-2"}`}>
             {t(ui.common.bedtimeBadge, locale)}
           </span>
         )}
         {item.pillar === "shows" && (
-          <span className="absolute left-2 top-2 rounded-full bg-white/90 px-2.5 py-1 font-display text-[0.65rem] font-semibold text-ink">
+          <span className={`absolute left-2 rounded-full bg-white/90 px-2.5 py-1 font-display text-[0.65rem] font-semibold text-ink ${featured ? "top-9" : "top-2"}`}>
             {t(ui.common.archiveBadge, locale)}
           </span>
         )}

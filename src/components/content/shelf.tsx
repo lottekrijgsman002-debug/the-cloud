@@ -42,7 +42,7 @@ export function Shelf({
           const character = characters.find((c) => c.id === item.characterId);
           const colSpan = idx === 0 ? "sm:col-span-7" : idx === 1 ? "sm:col-span-5" : "sm:col-span-4";
           return (
-            <div key={item.id} className={colSpan}>
+            <div key={item.id} className={`animate-card-in ${colSpan}`} style={{ animationDelay: `${Math.min(idx, 8) * 70}ms` }}>
               <ContentCard
                 item={item}
                 locale={locale}
