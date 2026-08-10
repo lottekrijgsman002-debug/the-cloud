@@ -33,7 +33,7 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
         <CharacterDecorations character={character} />
         <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent`}></div>
         <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-8 px-5 py-20 text-center sm:gap-10 sm:py-28">
-          <div className="flex h-48 w-48 overflow-hidden rounded-full bg-white/15 shadow-2xl sm:h-56 sm:w-56 ring-4 ring-white/20" style={{ borderWidth: "6px", borderColor: accent.borderColor }}>
+          <div className="flex h-48 w-48 overflow-hidden rounded-full bg-white/15 shadow-2xl sm:h-56 sm:w-56" style={{ borderWidth: "8px", borderColor: accent.borderColorStrong, boxShadow: `0 0 0 3px rgba(255,255,255,0.3), 0 8px 16px rgba(0,0,0,0.2)` }}>
             {character.portrait ? (
               <Image
                 src={character.portrait}
@@ -52,14 +52,14 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
             {character.moodWords.map((word) => (
               <span
                 key={word.en}
-                className={`rounded-full bg-white px-4 py-2 font-display text-sm font-semibold ${accent.text} border-2 transition-all hover:scale-110 hover:shadow-lg`}
-                style={{ borderColor: accent.borderColorSoft }}
+                className={`rounded-full bg-white px-4 py-2 font-display text-sm font-semibold ${accent.text} transition-all hover:scale-110 hover:shadow-lg hover:brightness-95`}
+                style={{ borderWidth: "3px", borderColor: accent.borderColorSoft, borderStyle: "solid" }}
               >
                 {t(word, locale)}
               </span>
             ))}
           </div>
-          <h1 className={`font-display text-5xl font-bold sm:text-6xl leading-tight ${accent.onBg} relative inline-block pb-3`} style={{ backgroundImage: `linear-gradient(to right, transparent calc(50% - 4rem), ${accent.borderColor}40 calc(50% - 4rem), ${accent.borderColor}40 calc(50% + 4rem), transparent calc(50% + 4rem))`, backgroundSize: "100% 4px", backgroundPosition: "0 100%", backgroundRepeat: "no-repeat" }}>{character.name}</h1>
+          <h1 className={`font-display text-5xl font-bold sm:text-6xl leading-tight ${accent.onBg} relative inline-block pb-4`} style={{ backgroundImage: `linear-gradient(to right, transparent calc(50% - 5rem), ${accent.borderColorStrong} calc(50% - 5rem), ${accent.borderColorStrong} calc(50% + 5rem), transparent calc(50% + 5rem))`, backgroundSize: "100% 3px", backgroundPosition: "0 100%", backgroundRepeat: "no-repeat" }}>{character.name}</h1>
           <p className={`max-w-2xl text-xl leading-relaxed ${accent.onBgSoft}`}>{t(character.voiceLine, locale)}</p>
         </div>
       </section>
