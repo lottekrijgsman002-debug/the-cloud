@@ -7,6 +7,7 @@ import { contentRepository } from "@/lib/content-repository";
 import { characters } from "@/data/characters";
 import { accentClasses } from "@/lib/accent";
 import { SkyScene } from "@/components/sky-scene";
+import { CharacterDecorations } from "@/components/character-decorations";
 import { Shelf } from "@/components/content/shelf";
 
 export function generateStaticParams() {
@@ -29,6 +30,7 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
     <>
       <section className={`relative overflow-hidden ${accent.bg}`}>
         <SkyScene />
+        <CharacterDecorations character={character} />
         <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-8 px-5 py-20 text-center sm:gap-10 sm:py-28">
           <div className="flex h-48 w-48 overflow-hidden rounded-full border-[4px] border-white/70 bg-white/15 shadow-lg sm:h-56 sm:w-56">
             {character.portrait ? (
