@@ -31,9 +31,9 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
       <section className={`relative overflow-hidden ${accent.bg} ${accent.pattern}`}>
         <SkyScene />
         <CharacterDecorations character={character} />
-        <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent`}></div>
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: "4px", background: `linear-gradient(to right, transparent, ${accent.borderColorStrong}, transparent)` }}></div>
         <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-8 px-5 py-20 text-center sm:gap-10 sm:py-28">
-          <div className="flex h-48 w-48 overflow-hidden rounded-full bg-white/15 shadow-2xl sm:h-56 sm:w-56" style={{ borderWidth: "8px", borderColor: accent.borderColorStrong, boxShadow: `0 0 0 3px rgba(255,255,255,0.3), 0 8px 16px rgba(0,0,0,0.2)` }}>
+          <div className="flex h-48 w-48 overflow-hidden rounded-full bg-white/15 sm:h-56 sm:w-56" style={{ borderWidth: "12px", borderColor: accent.borderColorStrong, boxShadow: `0 0 0 4px rgba(255,255,255,0.5), 0 0 24px ${accent.borderColorStrong}80, 0 12px 24px rgba(0,0,0,0.3)` }}>
             {character.portrait ? (
               <Image
                 src={character.portrait}
@@ -52,14 +52,21 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
             {character.moodWords.map((word) => (
               <span
                 key={word.en}
-                className={`rounded-full bg-white px-4 py-2 font-display text-sm font-semibold ${accent.text} transition-all hover:scale-110 hover:shadow-lg hover:brightness-95`}
-                style={{ borderWidth: "3px", borderColor: accent.borderColorSoft, borderStyle: "solid" }}
+                className={`rounded-full px-4 py-2 font-display text-sm font-semibold ${accent.text} transition-all hover:scale-110 hover:shadow-xl`}
+                style={{
+                  borderWidth: "4px",
+                  borderColor: accent.borderColorStrong,
+                  borderStyle: "solid",
+                  backgroundColor: accent.borderColorSoft,
+                  color: accent.textDeep,
+                  boxShadow: `0 4px 12px ${accent.borderColorStrong}40`
+                }}
               >
                 {t(word, locale)}
               </span>
             ))}
           </div>
-          <h1 className={`font-display text-5xl font-bold sm:text-6xl leading-tight ${accent.onBg} relative inline-block pb-4`} style={{ backgroundImage: `linear-gradient(to right, transparent calc(50% - 5rem), ${accent.borderColorStrong} calc(50% - 5rem), ${accent.borderColorStrong} calc(50% + 5rem), transparent calc(50% + 5rem))`, backgroundSize: "100% 3px", backgroundPosition: "0 100%", backgroundRepeat: "no-repeat" }}>{character.name}</h1>
+          <h1 className={`font-display text-5xl font-bold sm:text-6xl leading-tight ${accent.onBg} relative inline-block pb-6`} style={{ backgroundImage: `linear-gradient(to right, transparent calc(50% - 5.5rem), ${accent.borderColorStrong} calc(50% - 5.5rem), ${accent.borderColorStrong} calc(50% + 5.5rem), transparent calc(50% + 5.5rem))`, backgroundSize: "100% 6px", backgroundPosition: "0 100%", backgroundRepeat: "no-repeat", textShadow: `0 2px 4px rgba(0,0,0,0.1)` }}>{character.name}</h1>
           <p className={`max-w-2xl text-xl leading-relaxed ${accent.onBgSoft}`}>{t(character.voiceLine, locale)}</p>
         </div>
       </section>
