@@ -14,6 +14,8 @@ type AccentClasses = {
   onBgSoft: string;
   /** Subtle background pattern class for character pages. */
   pattern: string;
+  /** CSS color value for borders/accents */
+  borderColor: string;
 };
 
 export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
@@ -23,6 +25,7 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     text: "text-magenta-deep",
     textDeep: "text-magenta-deep",
     border: "border-magenta",
+    borderColor: "#a11f8a",
     onBg: "text-white",
     onBgSoft: "text-white/80",
     pattern: "pattern-loulou",
@@ -33,6 +36,7 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     text: "text-green-deep",
     textDeep: "text-green-deep",
     border: "border-green",
+    borderColor: "#33ae4c",
     onBg: "text-white",
     onBgSoft: "text-white/80",
     pattern: "pattern-guru",
@@ -43,6 +47,7 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     text: "text-mustard-deep",
     textDeep: "text-mustard-deep",
     border: "border-mustard",
+    borderColor: "#c2ab00",
     onBg: "text-ink",
     onBgSoft: "text-ink-soft",
     pattern: "pattern-mozy",
@@ -53,6 +58,7 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     text: "text-orange-deep",
     textDeep: "text-orange-deep",
     border: "border-orange",
+    borderColor: "#f17422",
     onBg: "text-white",
     onBgSoft: "text-white/80",
     pattern: "pattern-clock",
