@@ -21,18 +21,18 @@ export default async function SprookjesfilmPage({
         title={p.title}
         intro={p.intro}
         backLabel={dict.common.backHome}
-        bgClassName="bg-orange"
-        tone="dark"
+        tintClassName="bg-coral/15"
+        accentClassName="text-coral-deep"
       />
 
-      <section className="bg-paper">
+      <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-5 py-14">
           <div className="flex justify-center">
             <a
               href={siteConfig.social.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-ink px-6 py-3 font-display font-semibold uppercase text-white shadow-md transition-transform hover:-translate-y-0.5"
+              className="rounded-full bg-coral px-6 py-3 font-display font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-coral-deep"
             >
               {dict.common.listenOn} YouTube
             </a>

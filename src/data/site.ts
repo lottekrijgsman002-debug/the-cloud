@@ -13,19 +13,23 @@ export const siteConfig = {
   },
 };
 
-export type SectionKey =
-  | "music"
-  | "sprookjesfilm"
-  | "stories"
-  | "theatershow"
-  | "world"
-  | "about";
+export type PrimarySectionKey = "music" | "stories" | "world" | "about";
+export type SecondarySectionKey = "sprookjesfilm" | "theatershow";
+export type SectionKey = PrimarySectionKey | SecondarySectionKey;
 
-export const sections: { key: SectionKey; href: string; accent: string }[] = [
-  { key: "music", href: "/music", accent: "mustard" },
-  { key: "sprookjesfilm", href: "/sprookjesfilm", accent: "orange" },
-  { key: "stories", href: "/stories", accent: "green" },
-  { key: "theatershow", href: "/theatershow", accent: "red" },
-  { key: "world", href: "/world", accent: "magenta" },
-  { key: "about", href: "/about", accent: "orange" },
+// Primary pillars per the App Spec (Section 5, Table 3): Music, Verhalen
+// (Stories), Character World and the Grown-ups corner. "Home" is handled
+// separately in Header/Footer since it links to "/" rather than a sub-page.
+export const sections: { key: PrimarySectionKey; href: string; accent: string }[] = [
+  { key: "music", href: "/music", accent: "sunshine" },
+  { key: "stories", href: "/stories", accent: "sky" },
+  { key: "world", href: "/world", accent: "coral" },
+  { key: "about", href: "/about", accent: "sky" },
+];
+
+// Phase 2 pillars per the App Spec (Section 14.2): still built and reachable,
+// just not part of the primary tab structure yet.
+export const secondarySections: { key: SecondarySectionKey; href: string; accent: string }[] = [
+  { key: "sprookjesfilm", href: "/sprookjesfilm", accent: "coral" },
+  { key: "theatershow", href: "/theatershow", accent: "sunshine" },
 ];

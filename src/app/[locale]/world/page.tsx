@@ -11,16 +11,16 @@ export default async function WorldPage({
   const p = dict.pages.world;
 
   const characters: { key: keyof typeof dict.characters; accent: string }[] = [
-    { key: "loulou", accent: "magenta" },
-    { key: "lou", accent: "orange" },
-    { key: "guruWoof", accent: "green" },
-    { key: "maestroMozy", accent: "mustard" },
-    { key: "jazzCat", accent: "red" },
-    { key: "cowboyJack", accent: "orange" },
-    { key: "musicbox", accent: "magenta" },
-    { key: "yinAndJan", accent: "green" },
-    { key: "mamaCozy", accent: "mustard" },
-    { key: "loustock", accent: "red" },
+    { key: "loulou", accent: "coral" },
+    { key: "lou", accent: "sky" },
+    { key: "guruWoof", accent: "sunshine" },
+    { key: "maestroMozy", accent: "coral" },
+    { key: "jazzCat", accent: "sky" },
+    { key: "cowboyJack", accent: "sunshine" },
+    { key: "musicbox", accent: "coral" },
+    { key: "yinAndJan", accent: "sky" },
+    { key: "mamaCozy", accent: "sunshine" },
+    { key: "loustock", accent: "coral" },
   ];
 
   return (
@@ -31,11 +31,11 @@ export default async function WorldPage({
         title={p.title}
         intro={p.intro}
         backLabel={dict.common.backHome}
-        bgClassName="bg-magenta"
-        tone="light"
+        tintClassName="bg-coral/15"
+        accentClassName="text-coral-deep"
       />
 
-      <section className="bg-paper">
+      <section className="bg-cream">
         <div className="mx-auto max-w-5xl px-5 py-14">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {characters.map((c) => {
@@ -43,14 +43,14 @@ export default async function WorldPage({
               return (
                 <div
                   key={c.key}
-                  className="flex flex-col items-center rounded-3xl border-2 border-ink p-6 text-center shadow-[4px_4px_0_var(--color-ink)]"
+                  className="flex flex-col items-center rounded-[2rem] bg-white p-6 text-center shadow-md"
                 >
                   <CharacterAvatar name={character.name} accent={c.accent} size={100} />
-                  <h3 className="mt-4 font-display text-lg font-semibold uppercase text-ink">
+                  <h3 className="mt-4 font-display text-lg font-semibold text-ink">
                     {character.name}
                   </h3>
                   {character.role && (
-                    <p className="mt-1 font-display text-xs font-semibold uppercase tracking-wide text-magenta-deep">
+                    <p className="mt-1 font-display text-xs font-semibold text-coral-deep">
                       {character.role}
                     </p>
                   )}

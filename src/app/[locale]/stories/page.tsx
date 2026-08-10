@@ -20,11 +20,11 @@ export default async function StoriesPage({
         title={p.title}
         intro={p.intro}
         backLabel={dict.common.backHome}
-        bgClassName="bg-green"
-        tone="dark"
+        tintClassName="bg-sky/25"
+        accentClassName="text-sky-deep"
       />
 
-      <section className="bg-paper">
+      <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-5 py-14">
           <FlankedHeading className="text-ink">{p.storiesTitle}</FlankedHeading>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

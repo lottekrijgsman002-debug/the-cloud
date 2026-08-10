@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Luckiest_Guy, Caveat, Nunito } from "next/font/google";
+import { Baloo_2, Caveat, Nunito } from "next/font/google";
 import { notFound } from "next/navigation";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
@@ -7,10 +7,9 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import "../globals.css";
 
-const luckiestGuy = Luckiest_Guy({
+const baloo = Baloo_2({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-luckiest-guy",
+  variable: "--font-baloo",
 });
 
 const caveat = Caveat({
@@ -55,7 +54,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${luckiestGuy.variable} ${caveat.variable} ${nunito.variable} antialiased`}>
+      <body className={`${baloo.variable} ${caveat.variable} ${nunito.variable} antialiased`}>
         <Header locale={locale} dict={dict} />
         <main>{children}</main>
         <Footer locale={locale} dict={dict} />

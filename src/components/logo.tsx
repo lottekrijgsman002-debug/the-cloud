@@ -5,8 +5,8 @@ export function Logo({
   variant?: "dark" | "light";
   className?: string;
 }) {
-  const badgeBg = variant === "dark" ? "bg-ink" : "bg-paper";
-  const textColor = variant === "dark" ? "text-paper" : "text-ink";
+  const badgeBg = variant === "dark" ? "bg-ink" : "bg-cream";
+  const textColor = variant === "dark" ? "text-cream" : "text-ink";
 
   return (
     <div

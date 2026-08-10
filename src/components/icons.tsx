@@ -48,6 +48,15 @@ export function StarIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+export function SunIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
+      <circle cx="12" cy="12" r="5" fill="currentColor" stroke="none" />
+      <path d="M12 1.5v3M12 19.5v3M22.5 12h-3M4.5 12h-3M19.1 4.9l-2.1 2.1M7 17l-2.1 2.1M19.1 19.1 17 17M7 7 4.9 4.9" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function MoonIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>

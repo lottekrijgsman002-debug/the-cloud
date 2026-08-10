@@ -15,7 +15,7 @@ export function PlatformLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex items-center justify-center rounded-full bg-ink text-white shadow-sm transition-transform hover:-translate-y-1"
+      className="flex items-center justify-center rounded-full bg-white text-ink shadow-md transition-transform hover:-translate-y-1"
       style={{ width: size, height: size }}
     >
       <Icon className="h-[42%] w-[42%]" />

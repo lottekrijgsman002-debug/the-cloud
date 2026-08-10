@@ -23,7 +23,7 @@ const socialLinks = [
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
-    <footer className="mt-24 border-t-2 border-ink bg-paper text-ink">
+    <footer className="mt-24 bg-sky/30 text-ink">
       <div className="mx-auto max-w-6xl px-5 pb-10 pt-14">
         <div className="grid gap-10 py-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -32,10 +32,15 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
 
           <div>
-            <div className="font-display text-sm font-semibold uppercase tracking-wide text-orange-deep">
+            <div className="font-display text-sm font-semibold text-coral-deep">
               {dict.footer.sections}
             </div>
             <ul className="mt-3 space-y-2">
+              <li>
+                <Link href={`/${locale}`} className="flex items-center gap-2 text-sm text-ink-soft hover:text-ink">
+                  {dict.nav.home}
+                </Link>
+              </li>
               {sections.map((s) => (
                 <li key={s.key}>
                   <Link
@@ -51,7 +56,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
 
           <div>
-            <div className="font-display text-sm font-semibold uppercase tracking-wide text-orange-deep">
+            <div className="font-display text-sm font-semibold text-coral-deep">
               {dict.footer.follow}
             </div>
             <ul className="mt-3 flex flex-wrap gap-3">
@@ -62,7 +67,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-white transition-transform hover:-translate-y-0.5"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-ink shadow-sm transition-transform hover:-translate-y-0.5"
                   >
                     <Icon className="h-4 w-4" />
                   </a>
@@ -72,7 +77,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
 
           <div>
-            <div className="font-display text-sm font-semibold uppercase tracking-wide text-orange-deep">
+            <div className="font-display text-sm font-semibold text-coral-deep">
               {dict.footer.newsletterTitle}
             </div>
             <NewsletterForm

@@ -23,11 +23,11 @@ export default async function MusicPage({
         title={p.title}
         intro={p.intro}
         backLabel={dict.common.backHome}
-        bgClassName="bg-mustard"
-        tone="dark"
+        tintClassName="bg-sunshine/25"
+        accentClassName="text-sunshine-deep"
       />
 
-      <section className="bg-paper">
+      <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-5 py-14">
           <div className="flex flex-wrap justify-center gap-4">
             <PlatformLink href={siteConfig.social.youtube} label="YouTube" Icon={YoutubeIcon} />
