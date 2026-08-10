@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fredoka, Caveat, Nunito } from "next/font/google";
+import { Luckiest_Guy, Caveat, Nunito } from "next/font/google";
 import { notFound } from "next/navigation";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
@@ -7,9 +7,10 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import "../globals.css";
 
-const fredoka = Fredoka({
+const luckiestGuy = Luckiest_Guy({
   subsets: ["latin"],
-  variable: "--font-fredoka",
+  weight: "400",
+  variable: "--font-luckiest-guy",
 });
 
 const caveat = Caveat({
@@ -54,7 +55,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${fredoka.variable} ${caveat.variable} ${nunito.variable} antialiased`}>
+      <body className={`${luckiestGuy.variable} ${caveat.variable} ${nunito.variable} antialiased`}>
         <Header locale={locale} dict={dict} />
         <main>{children}</main>
         <Footer locale={locale} dict={dict} />

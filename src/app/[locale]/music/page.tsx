@@ -5,6 +5,7 @@ import { NoteIcon } from "@/components/icons";
 import { PlatformLink } from "@/components/platform-link";
 import { YoutubeIcon, SpotifyIcon, AppleMusicIcon } from "@/components/icons";
 import { siteConfig } from "@/data/site";
+import { FlankedHeading } from "@/components/flanked-heading";
 
 export default async function MusicPage({
   params,
@@ -34,9 +35,7 @@ export default async function MusicPage({
             <PlatformLink href={siteConfig.social.appleMusic} label="Apple Music" Icon={AppleMusicIcon} />
           </div>
 
-          <h2 className="mt-16 text-center font-display text-2xl font-semibold uppercase text-ink">
-            {p.albumsTitle}
-          </h2>
+          <FlankedHeading className="mt-16 text-ink">{p.albumsTitle}</FlankedHeading>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3].map((i) => (
               <PlaceholderCard

@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/page-header";
 import { PlaceholderCard, EditableNote } from "@/components/placeholder-card";
 import { FilmIcon } from "@/components/icons";
 import { siteConfig } from "@/data/site";
+import { FlankedHeading } from "@/components/flanked-heading";
 
 export default async function SprookjesfilmPage({
   params,
@@ -37,9 +38,7 @@ export default async function SprookjesfilmPage({
             </a>
           </div>
 
-          <h2 className="mt-14 text-center font-display text-2xl font-semibold uppercase text-ink">
-            {p.episodesTitle}
-          </h2>
+          <FlankedHeading className="mt-14 text-ink">{p.episodesTitle}</FlankedHeading>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3, 4].map((i) => (
               <PlaceholderCard

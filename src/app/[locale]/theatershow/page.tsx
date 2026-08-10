@@ -2,6 +2,7 @@ import { resolveLocale } from "@/i18n/resolve-locale";
 import { PageHeader } from "@/components/page-header";
 import { EditableNote } from "@/components/placeholder-card";
 import { MaskIcon, NoteIcon } from "@/components/icons";
+import { FlankedHeading } from "@/components/flanked-heading";
 
 export default async function TheatershowPage({
   params,
@@ -27,9 +28,7 @@ export default async function TheatershowPage({
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-14">
-          <h2 className="text-center font-display text-2xl font-semibold uppercase text-ink">
-            {p.showsTitle}
-          </h2>
+          <FlankedHeading className="text-ink">{p.showsTitle}</FlankedHeading>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             {shows.map((show) => (
               <div

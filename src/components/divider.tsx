@@ -19,10 +19,13 @@ export function DoodleField({ className }: { className?: string }) {
     { top: "85%", left: "55%", size: 26, rotate: -6, icon: 3 },
     { top: "40%", left: "12%", size: 24, rotate: 20, icon: 1 },
     { top: "30%", left: "78%", size: 26, rotate: -14, icon: 5 },
+    { top: "50%", left: "50%", size: 20, rotate: 5, icon: 3 },
+    { top: "92%", left: "20%", size: 22, rotate: -18, icon: 2 },
+    { top: "6%", left: "68%", size: 18, rotate: 22, icon: 4 },
   ];
   return (
     <div
-      className={`pointer-events-none absolute inset-0 overflow-hidden text-white/25 ${className ?? ""}`}
+      className={`texture-dots pointer-events-none absolute inset-0 overflow-hidden text-white/25 ${className ?? ""}`}
       aria-hidden="true"
     >
       {doodles.map((d, i) => {

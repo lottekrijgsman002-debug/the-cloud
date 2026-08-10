@@ -2,6 +2,8 @@ import { resolveLocale } from "@/i18n/resolve-locale";
 import { PageHeader } from "@/components/page-header";
 import { NoteIcon, FilmIcon } from "@/components/icons";
 import { siteConfig } from "@/data/site";
+import { DoodleField } from "@/components/divider";
+import { FlankedHeading } from "@/components/flanked-heading";
 
 export default async function AboutPage({
   params,
@@ -46,11 +48,10 @@ export default async function AboutPage({
         </div>
       </section>
 
-      <section className="bg-green">
-        <div className="mx-auto max-w-4xl px-5 py-14 text-center">
-          <h2 className="font-display text-2xl font-semibold uppercase text-ink sm:text-3xl">
-            {p.givingBackTitle}
-          </h2>
+      <section className="relative overflow-hidden bg-green">
+        <DoodleField className="text-white/20" />
+        <div className="relative mx-auto max-w-4xl px-5 py-14 text-center">
+          <FlankedHeading className="text-ink">{p.givingBackTitle}</FlankedHeading>
           <p className="mx-auto mt-3 max-w-2xl text-ink/80">{p.givingBackBody}</p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">

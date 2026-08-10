@@ -44,7 +44,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-display: var(--font-fredoka);
+  --font-display: var(--font-luckiest-guy);
   --font-script: var(--font-caveat);
   --font-body: var(--font-nunito);
 }
@@ -57,11 +57,29 @@ body {
 
 h1, h2, h3, h4, .font-display {
   font-family: var(--font-display), sans-serif;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: 0.015em;
 }
 
 .font-script {
   font-family: var(--font-script), cursive;
+}
+
+/* A scattered dot texture, meant to sit under DoodleField's floating icons —
+   the real site's flat color sections are never perfectly flat. */
+.texture-dots {
+  position: relative;
+}
+
+.texture-dots::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.9) 1.4px, transparent 1.4px);
+  background-size: 15px 15px;
+  mix-blend-mode: overlay;
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 @keyframes twinkle {

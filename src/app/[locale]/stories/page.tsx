@@ -2,6 +2,7 @@ import { resolveLocale } from "@/i18n/resolve-locale";
 import { PageHeader } from "@/components/page-header";
 import { PlaceholderCard, EditableNote } from "@/components/placeholder-card";
 import { BookIcon } from "@/components/icons";
+import { FlankedHeading } from "@/components/flanked-heading";
 
 export default async function StoriesPage({
   params,
@@ -25,9 +26,7 @@ export default async function StoriesPage({
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-14">
-          <h2 className="text-center font-display text-2xl font-semibold uppercase text-ink">
-            {p.storiesTitle}
-          </h2>
+          <FlankedHeading className="text-ink">{p.storiesTitle}</FlankedHeading>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <PlaceholderCard
