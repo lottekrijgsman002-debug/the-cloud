@@ -34,16 +34,21 @@ export function Shelf({
           </Link>
         )}
       </div>
-      <div className="-mx-5 flex gap-4 overflow-x-auto px-5 pb-2">
-        {items.map((item) => {
+      <div className="-mx-5 flex gap-4 overflow-x-auto px-5 pb-2 sm:grid sm:grid-cols-12 sm:gap-6 sm:overflow-visible sm:px-0">
+        {items.map((item, idx) => {
           const character = characters.find((c) => c.id === item.characterId);
+          const isFirst = idx === 0;
+          const isSecond = idx === 1;
+          const colSpan = isFirst ? "sm:col-span-6" : isSecond ? "sm:col-span-6" : "sm:col-span-4";
+
           return (
-            <ContentCard
-              key={item.id}
-              item={item}
-              locale={locale}
-              accentToken={character?.accentToken ?? "orange"}
-            />
+            <div key={item.id} className={colSpan}>
+              <ContentCard
+                item={item}
+                locale={locale}
+                accentToken={character?.accentToken ?? "orange"}
+              />
+            </div>
           );
         })}
       </div>
