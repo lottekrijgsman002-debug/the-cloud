@@ -27,7 +27,7 @@ export function Shelf({
         {seeAllHref && (
           <Link
             href={seeAllHref}
-            className="flex items-center gap-1 font-display text-sm font-semibold text-coral-deep"
+            className="flex items-center gap-1 font-display text-sm font-semibold text-orange-deep"
           >
             {t(ui.common.seeAll, locale)}
             <ChevronRight className="h-4 w-4" />
@@ -42,7 +42,7 @@ export function Shelf({
               key={item.id}
               item={item}
               locale={locale}
-              accentToken={character?.accentToken ?? "coral"}
+              accentToken={character?.accentToken ?? "orange"}
             />
           );
         })}

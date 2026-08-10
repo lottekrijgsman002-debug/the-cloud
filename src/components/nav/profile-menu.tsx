@@ -32,7 +32,7 @@ export function ProfileMenu({ locale }: { locale: Locale }) {
         type="button"
         aria-label={t(ui.nav.menu, locale)}
         onClick={() => setOpen((v) => !v)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-white/70 text-ink transition-colors hover:bg-white"
+        className="flex h-10 w-10 items-center justify-center rounded-full bg-ink/5 text-ink transition-colors hover:bg-ink/10"
       >
         {open ? <CloseIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
       </button>
@@ -44,7 +44,7 @@ export function ProfileMenu({ locale }: { locale: Locale }) {
               key={href}
               href={href}
               onClick={() => setOpen(false)}
-              className="flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-semibold text-ink-soft transition-colors hover:bg-sky/15 hover:text-ink"
+              className="flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-semibold text-ink-soft transition-colors hover:bg-orange/10 hover:text-ink"
             >
               <Icon className="h-[18px] w-[18px]" />
               {t(label, locale)}

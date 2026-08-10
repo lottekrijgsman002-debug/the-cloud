@@ -3,8 +3,16 @@ import type { Locale, Localized, Pillar } from "@/lib/types";
 import { t } from "@/lib/locale";
 import { ui } from "@/lib/ui-strings";
 import { contentRepository } from "@/lib/content-repository";
+import { accentClasses } from "@/lib/accent";
 import { ContentCard } from "@/components/content/content-card";
 import { SkyScene } from "@/components/sky-scene";
+
+const pillarAccent: Record<Pillar, keyof typeof accentClasses> = {
+  listen: "mustard",
+  watch: "orange",
+  stories: "magenta",
+  shows: "green",
+};
 
 export async function PillarHub({
   pillar,
@@ -32,14 +40,15 @@ export async function PillarHub({
     .filter((item) => !onlyNew || item.isNew);
 
   const basePath = `/${pillar}`;
+  const accent = accentClasses[pillarAccent[pillar]];
 
   return (
     <>
-      <section className="relative overflow-hidden bg-sky/20">
+      <section className={`relative overflow-hidden ${accent.bg}`}>
         <SkyScene />
         <div className="relative mx-auto max-w-4xl px-5 py-14 text-center sm:py-20">
-          <h1 className="font-display text-4xl font-semibold text-ink sm:text-5xl">{t(title, locale)}</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">{t(intro, locale)}</p>
+          <h1 className={`font-display text-4xl font-semibold sm:text-5xl ${accent.onBg}`}>{t(title, locale)}</h1>
+          <p className={`mx-auto mt-4 max-w-2xl text-lg leading-relaxed ${accent.onBgSoft}`}>{t(intro, locale)}</p>
         </div>
       </section>
 
@@ -72,7 +81,7 @@ export async function PillarHub({
                   key={item.id}
                   item={item}
                   locale={locale}
-                  accentToken={character?.accentToken ?? "coral"}
+                  accentToken={character?.accentToken ?? "orange"}
                 />
               );
             })}

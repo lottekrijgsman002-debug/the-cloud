@@ -9,11 +9,11 @@ export default async function ClubPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-coral/15">
+      <section className="relative overflow-hidden bg-orange">
         <SkyScene />
         <div className="relative mx-auto max-w-3xl px-5 py-14 text-center sm:py-20">
-          <h1 className="font-display text-4xl font-semibold text-ink sm:text-5xl">{t(ui.club.title, locale)}</h1>
-          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-ink-soft">{t(ui.club.intro, locale)}</p>
+          <h1 className="font-display text-4xl font-semibold text-white sm:text-5xl">{t(ui.club.title, locale)}</h1>
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/85">{t(ui.club.intro, locale)}</p>
         </div>
       </section>
 

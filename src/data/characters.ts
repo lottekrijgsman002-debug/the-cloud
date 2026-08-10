@@ -11,7 +11,7 @@ export const characters: Character[] = [
       { nl: "avontuur", en: "adventure" },
       { nl: "vriendschap", en: "friendship" },
     ],
-    accentToken: "coral",
+    accentToken: "magenta",
     voiceLine: {
       nl: "Twee beste vrienden, altijd op zoek naar het volgende avontuur.",
       en: "Two best friends, always on the hunt for the next adventure.",
@@ -26,7 +26,7 @@ export const characters: Character[] = [
       { nl: "meditatie", en: "meditation" },
       { nl: "zacht", en: "gentle" },
     ],
-    accentToken: "leaf",
+    accentToken: "green",
     voiceLine: {
       nl: "Rustig ademen, samen met Guru Woof. Tijd om tot rust te komen.",
       en: "Slow breaths, together with Guru Woof. Time to wind all the way down.",
@@ -41,7 +41,7 @@ export const characters: Character[] = [
       { nl: "piano", en: "piano" },
       { nl: "elegant", en: "elegant" },
     ],
-    accentToken: "sunshine",
+    accentToken: "mustard",
     voiceLine: {
       nl: "Een beetje concertzaalmagie, gespeeld op de piano, voor elk klein oor.",
       en: "A little concert-hall magic, played on the piano, for every little ear.",
@@ -56,7 +56,7 @@ export const characters: Character[] = [
       { nl: "cool", en: "cool" },
       { nl: "speels", en: "playful" },
     ],
-    accentToken: "berry",
+    accentToken: "orange",
     voiceLine: {
       nl: "Cool, relaxed en altijd in voor een geïmproviseerd deuntje op de gitaar.",
       en: "Cool, relaxed and always ready for an improvised tune on the guitar.",
@@ -71,7 +71,7 @@ export const characters: Character[] = [
       { nl: "tijdreizen", en: "time-travel" },
       { nl: "nieuwsgierig", en: "curious" },
     ],
-    accentToken: "sky",
+    accentToken: "orange",
     voiceLine: {
       nl: "Een nieuwsgierige reiziger door de tijd, met voor elk tijdperk een lied.",
       en: "A curious traveler through time, with a song for every era.",

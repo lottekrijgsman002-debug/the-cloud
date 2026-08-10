@@ -1,47 +1,54 @@
 import type { Character } from "@/lib/types";
 
 type AccentClasses = {
+  /** Full-strength background, for hero/header takeovers. */
   bg: string;
+  /** Light tint, for card surfaces and icon badges. */
   bgSoft: string;
   text: string;
   textDeep: string;
   border: string;
+  /** Text color to use on top of the full-strength `bg`. */
+  onBg: string;
+  /** Softer/secondary text color to use on top of the full-strength `bg`. */
+  onBgSoft: string;
 };
 
 export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
-  sunshine: {
-    bg: "bg-sunshine",
-    bgSoft: "bg-sunshine/20",
-    text: "text-sunshine-deep",
-    textDeep: "text-sunshine-deep",
-    border: "border-sunshine",
+  magenta: {
+    bg: "bg-magenta",
+    bgSoft: "bg-magenta/15",
+    text: "text-magenta-deep",
+    textDeep: "text-magenta-deep",
+    border: "border-magenta",
+    onBg: "text-white",
+    onBgSoft: "text-white/80",
   },
-  sky: {
-    bg: "bg-sky",
-    bgSoft: "bg-sky/20",
-    text: "text-sky-deep",
-    textDeep: "text-sky-deep",
-    border: "border-sky",
+  green: {
+    bg: "bg-green",
+    bgSoft: "bg-green/15",
+    text: "text-green-deep",
+    textDeep: "text-green-deep",
+    border: "border-green",
+    onBg: "text-white",
+    onBgSoft: "text-white/80",
   },
-  coral: {
-    bg: "bg-coral",
-    bgSoft: "bg-coral/15",
-    text: "text-coral-deep",
-    textDeep: "text-coral-deep",
-    border: "border-coral",
+  mustard: {
+    bg: "bg-mustard",
+    bgSoft: "bg-mustard/20",
+    text: "text-mustard-deep",
+    textDeep: "text-mustard-deep",
+    border: "border-mustard",
+    onBg: "text-ink",
+    onBgSoft: "text-ink-soft",
   },
-  leaf: {
-    bg: "bg-leaf",
-    bgSoft: "bg-leaf/15",
-    text: "text-leaf-deep",
-    textDeep: "text-leaf-deep",
-    border: "border-leaf",
-  },
-  berry: {
-    bg: "bg-berry",
-    bgSoft: "bg-berry/15",
-    text: "text-berry-deep",
-    textDeep: "text-berry-deep",
-    border: "border-berry",
+  orange: {
+    bg: "bg-orange",
+    bgSoft: "bg-orange/15",
+    text: "text-orange-deep",
+    textDeep: "text-orange-deep",
+    border: "border-orange",
+    onBg: "text-white",
+    onBgSoft: "text-white/80",
   },
 };

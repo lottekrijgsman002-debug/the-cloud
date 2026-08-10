@@ -45,7 +45,7 @@ export function AccountForm({ locale }: { locale: Locale }) {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full rounded-full border-2 border-ink/15 bg-white px-4 py-3 text-sm text-ink outline-none ring-coral focus:ring-2"
+          className="w-full rounded-full border-2 border-ink/15 bg-white px-4 py-3 text-sm text-ink outline-none ring-orange focus:ring-2"
         />
       </label>
 
@@ -58,7 +58,7 @@ export function AccountForm({ locale }: { locale: Locale }) {
               type="button"
               onClick={() => setAgeBand(band)}
               className={`rounded-full px-4 py-2 font-display text-sm font-semibold transition-colors ${
-                ageBand === band ? "bg-ink text-white" : "bg-sky/20 text-ink-soft hover:text-ink"
+                ageBand === band ? "bg-ink text-white" : "bg-orange/10 text-ink-soft hover:text-ink"
               }`}
             >
               {band}
@@ -69,7 +69,7 @@ export function AccountForm({ locale }: { locale: Locale }) {
 
       <button
         type="submit"
-        className="mt-6 rounded-full bg-coral px-6 py-3 font-display font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-coral-deep"
+        className="mt-6 rounded-full bg-ink px-6 py-3 font-display font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-ink/80"
       >
         {savedFlash ? t(ui.account.saved, locale) : t(ui.account.save, locale)}
       </button>

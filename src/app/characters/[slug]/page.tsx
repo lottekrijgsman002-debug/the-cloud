@@ -26,13 +26,11 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
 
   return (
     <>
-      <section className={`relative overflow-hidden ${accent.bgSoft}`}>
+      <section className={`relative overflow-hidden ${accent.bg}`}>
         <SkyScene />
         <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-6 px-5 py-16 text-center sm:py-20">
-          <div
-            className={`flex h-32 w-32 items-center justify-center rounded-full border-[3px] border-dashed bg-white shadow-md ${accent.border}`}
-          >
-            <span className="font-display px-3 text-center text-base font-semibold text-ink">
+          <div className="flex h-32 w-32 items-center justify-center rounded-full border-[3px] border-dashed border-white/70 bg-white/15 shadow-md">
+            <span className={`font-display px-3 text-center text-base font-semibold ${accent.onBg}`}>
               {character.name}
             </span>
           </div>
@@ -46,8 +44,8 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
               </span>
             ))}
           </div>
-          <h1 className="font-display text-3xl font-semibold text-ink sm:text-4xl">{character.name}</h1>
-          <p className="max-w-xl text-lg leading-relaxed text-ink-soft">{t(character.voiceLine, locale)}</p>
+          <h1 className={`font-display text-3xl font-semibold sm:text-4xl ${accent.onBg}`}>{character.name}</h1>
+          <p className={`max-w-xl text-lg leading-relaxed ${accent.onBgSoft}`}>{t(character.voiceLine, locale)}</p>
         </div>
       </section>
 

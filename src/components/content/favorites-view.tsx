@@ -52,7 +52,7 @@ export function FavoritesView({ locale }: { locale: Locale }) {
                 {continueItems.map((item) => {
                   const character = characters.find((c) => c.id === item.characterId);
                   return (
-                    <ContentCard key={item.id} item={item} locale={locale} accentToken={character?.accentToken ?? "coral"} />
+                    <ContentCard key={item.id} item={item} locale={locale} accentToken={character?.accentToken ?? "orange"} />
                   );
                 })}
               </div>
@@ -68,7 +68,7 @@ export function FavoritesView({ locale }: { locale: Locale }) {
                 {favoriteItems.map((item) => {
                   const character = characters.find((c) => c.id === item.characterId);
                   return (
-                    <ContentCard key={item.id} item={item} locale={locale} accentToken={character?.accentToken ?? "coral"} />
+                    <ContentCard key={item.id} item={item} locale={locale} accentToken={character?.accentToken ?? "orange"} />
                   );
                 })}
               </div>

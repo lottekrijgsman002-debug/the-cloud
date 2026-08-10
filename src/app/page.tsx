@@ -21,34 +21,34 @@ export default async function HomePage() {
   const campaignCharacter = campaignPick
     ? characters.find((c) => c.id === campaignPick.characterId)
     : undefined;
-  const heroAccent = accentClasses[campaignCharacter?.accentToken ?? "sunshine"];
+  const heroAccent = accentClasses[campaignCharacter?.accentToken ?? "magenta"];
 
   return (
     <>
-      {/* Hero: campaign/seasonal pick wins the slot */}
-      <section className="relative overflow-hidden bg-sunshine">
+      {/* Hero: campaign/seasonal pick wins the slot, background matches its character */}
+      <section className={`relative overflow-hidden ${heroAccent.bg}`}>
         <SkyScene />
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:py-20 lg:grid-cols-2 lg:py-24">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/50 px-4 py-1.5 font-display text-sm font-semibold text-ink">
+            <span className={`inline-flex items-center gap-2 rounded-full bg-white/25 px-4 py-1.5 font-display text-sm font-semibold ${heroAccent.onBg}`}>
               {t(ui.home.heroEyebrow, locale)} Loulou &amp; Lou
             </span>
-            <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
+            <h1 className={`mt-5 font-display text-4xl font-semibold leading-[1.1] sm:text-5xl lg:text-6xl ${heroAccent.onBg}`}>
               {t(ui.home.heroTitle, locale)}
             </h1>
-            <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-soft">
+            <p className={`mt-5 max-w-lg text-lg leading-relaxed ${heroAccent.onBgSoft}`}>
               {t(ui.home.heroSubtitle, locale)}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/characters/loulou-lou"
-                className="rounded-full bg-coral px-6 py-3 font-display font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-coral-deep"
+                className="rounded-full bg-ink px-6 py-3 font-display font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-ink/80"
               >
                 {t(ui.home.ctaPrimary, locale)}
               </Link>
               <Link
                 href="/listen"
-                className="rounded-full border-2 border-ink/25 px-6 py-3 font-display font-semibold text-ink transition-transform hover:-translate-y-0.5 hover:border-ink/50"
+                className={`rounded-full border-2 px-6 py-3 font-display font-semibold transition-transform hover:-translate-y-0.5 ${heroAccent.onBg} ${heroAccent.onBg === "text-white" ? "border-white/50 hover:border-white" : "border-ink/25 hover:border-ink/50"}`}
               >
                 {t(ui.home.ctaSecondary, locale)}
               </Link>
@@ -101,7 +101,7 @@ export default async function HomePage() {
         {/* Shows archive teaser */}
         <Link
           href="/shows"
-          className="flex flex-col items-center gap-3 rounded-[2rem] bg-sky/20 px-8 py-10 text-center transition-transform hover:-translate-y-0.5 sm:flex-row sm:justify-between sm:text-left"
+          className="flex flex-col items-center gap-3 rounded-[2rem] bg-orange/10 px-8 py-10 text-center transition-transform hover:-translate-y-0.5 sm:flex-row sm:justify-between sm:text-left"
         >
           <div>
             <h2 className="font-display text-xl font-semibold text-ink sm:text-2xl">

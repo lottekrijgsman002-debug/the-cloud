@@ -1,28 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  /* Loulou & Lou Build Plan, Section 8: starting design tokens.
-     Exact hex values are flagged in the plan as pending a color-picker
-     pass on real brand assets (logo, character illustrations); these are
-     the "best guess, refine later" starting direction. */
+  /* Real brand colors, sampled from loulou-lou.com screenshots (replacing
+     the Build Plan's unconfirmed starting palette). */
   --color-paper: #ffffff;
-  --color-ink: #2b2420;
-  --color-ink-soft: #5a4f45;
+  --color-ink: #141414;
+  --color-ink-soft: #3a3a3a;
 
-  --color-sunshine: #f5b733;
-  --color-sunshine-deep: #d99a1b;
+  --color-magenta: #a11f8a;
+  --color-magenta-deep: #841972;
 
-  --color-sky: #6ec6e8;
-  --color-sky-deep: #4aa8ce;
+  --color-green: #33ae4c;
+  --color-green-deep: #268a3b;
 
-  /* Character-specific accents, distinct atmosphere within the shared
-     yellow/sky palette (Section 8). */
-  --color-coral: #f0754f;
-  --color-coral-deep: #d65a38;
-  --color-leaf: #6fa97a;
-  --color-leaf-deep: #4f8860;
-  --color-berry: #a6528c;
-  --color-berry-deep: #863c70;
+  --color-mustard: #c2ab00;
+  --color-mustard-deep: #9c8a00;
+
+  --color-orange: #f17422;
+  --color-orange-deep: #d15f13;
 
   --background: var(--color-paper);
   --foreground: var(--color-ink);
@@ -33,16 +28,14 @@
   --color-ink: var(--color-ink);
   --color-ink-soft: var(--color-ink-soft);
 
-  --color-sunshine: var(--color-sunshine);
-  --color-sunshine-deep: var(--color-sunshine-deep);
-  --color-sky: var(--color-sky);
-  --color-sky-deep: var(--color-sky-deep);
-  --color-coral: var(--color-coral);
-  --color-coral-deep: var(--color-coral-deep);
-  --color-leaf: var(--color-leaf);
-  --color-leaf-deep: var(--color-leaf-deep);
-  --color-berry: var(--color-berry);
-  --color-berry-deep: var(--color-berry-deep);
+  --color-magenta: var(--color-magenta);
+  --color-magenta-deep: var(--color-magenta-deep);
+  --color-green: var(--color-green);
+  --color-green-deep: var(--color-green-deep);
+  --color-mustard: var(--color-mustard);
+  --color-mustard-deep: var(--color-mustard-deep);
+  --color-orange: var(--color-orange);
+  --color-orange-deep: var(--color-orange-deep);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

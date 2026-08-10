@@ -15,7 +15,7 @@ export default async function AccountPage() {
       <div className="mt-8 space-y-6">
         <AccountForm locale={locale} />
 
-        <div className="rounded-[2rem] bg-sky/15 p-8">
+        <div className="rounded-[2rem] bg-orange/10 p-8">
           <h2 className="font-display text-lg font-semibold text-ink">{t(ui.account.languageSectionTitle, locale)}</h2>
           <div className="mt-4">
             <LanguageToggle locale={locale} />

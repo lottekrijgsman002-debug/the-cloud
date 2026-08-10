@@ -19,7 +19,7 @@ export function FavoriteButton({ contentId, size = "md" }: { contentId: string; 
       aria-pressed={active}
       aria-label={active ? "Remove from favorites" : "Add to favorites"}
       className={`flex ${dim} shrink-0 items-center justify-center rounded-full shadow-sm transition-colors ${
-        active ? "bg-coral text-white" : "bg-white text-ink-soft hover:text-coral-deep"
+        active ? "bg-orange text-white" : "bg-white text-ink-soft hover:text-orange-deep"
       }`}
     >
       <HeartIcon className={iconDim} fill={active ? "currentColor" : "none"} />

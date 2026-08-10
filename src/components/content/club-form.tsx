@@ -36,12 +36,12 @@ export function ClubForm({ locale }: { locale: Locale }) {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-full border-2 border-ink/15 bg-white px-4 py-3 text-sm text-ink outline-none ring-coral focus:ring-2"
+          className="w-full rounded-full border-2 border-ink/15 bg-white px-4 py-3 text-sm text-ink outline-none ring-orange focus:ring-2"
         />
       </label>
       <button
         type="submit"
-        className="shrink-0 rounded-full bg-coral px-6 py-3 font-display font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-coral-deep"
+        className="shrink-0 rounded-full bg-ink px-6 py-3 font-display font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5 hover:bg-ink/80"
       >
         {t(ui.club.submit, locale)}
       </button>

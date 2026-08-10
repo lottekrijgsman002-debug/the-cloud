@@ -23,7 +23,7 @@ const secondaryLinks = [
 
 export function Footer({ locale }: { locale: Locale }) {
   return (
-    <footer className="mt-24 mb-16 border-t-2 border-ink/10 bg-sky/15 sm:mb-0">
+    <footer className="mt-24 mb-16 border-t-2 border-ink/10 bg-white sm:mb-0">
       <div className="mx-auto max-w-6xl px-5 pb-10 pt-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -32,7 +32,7 @@ export function Footer({ locale }: { locale: Locale }) {
           </div>
 
           <div>
-            <div className="font-display text-sm font-semibold text-coral-deep">{t(ui.footer.explore, locale)}</div>
+            <div className="font-display text-sm font-semibold text-orange-deep">{t(ui.footer.explore, locale)}</div>
             <ul className="mt-3 space-y-2">
               {[...primaryNavItems, ...secondaryLinks].map(({ href, label, Icon }) => (
                 <li key={href}>
@@ -46,7 +46,7 @@ export function Footer({ locale }: { locale: Locale }) {
           </div>
 
           <div>
-            <div className="font-display text-sm font-semibold text-coral-deep">{t(ui.footer.follow, locale)}</div>
+            <div className="font-display text-sm font-semibold text-orange-deep">{t(ui.footer.follow, locale)}</div>
             <ul className="mt-3 flex flex-wrap gap-3">
               {socialLinks.map(({ href, label, Icon }) => (
                 <li key={label}>

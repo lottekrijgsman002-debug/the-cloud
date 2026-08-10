@@ -43,7 +43,7 @@ export function SearchView({ locale }: { locale: Locale }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={t(ui.search.placeholder, locale)}
-          className="w-full rounded-full border-2 border-ink/15 bg-white py-3.5 pl-12 pr-5 text-sm text-ink outline-none ring-coral focus:ring-2"
+          className="w-full rounded-full border-2 border-ink/15 bg-white py-3.5 pl-12 pr-5 text-sm text-ink outline-none ring-orange focus:ring-2"
         />
       </div>
 
@@ -62,7 +62,7 @@ export function SearchView({ locale }: { locale: Locale }) {
           {matchedContent.map((item) => {
             const character = characters.find((c) => c.id === item.characterId);
             return (
-              <ContentCard key={item.id} item={item} locale={locale} accentToken={character?.accentToken ?? "coral"} />
+              <ContentCard key={item.id} item={item} locale={locale} accentToken={character?.accentToken ?? "orange"} />
             );
           })}
         </div>

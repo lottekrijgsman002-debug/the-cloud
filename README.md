@@ -62,16 +62,20 @@ src/
 
 ## Design foundations
 
-Palette and principles come from Build Plan Section 8:
-
-- **Colors**: white/paper background, Sunshine Yellow (hero, primary
-  buttons), Sky Blue (navigation), plus Coral/Leaf/Berry as additional
-  character-specific accents within that shared palette. All flagged in the
-  plan as a starting direction pending a color-picker pass on your real
-  brand assets, defined as CSS custom properties in `src/app/globals.css`.
+- **Colors**: sampled from real loulou-lou.com screenshots rather than the
+  Build Plan's starting guess: white/paper background, Magenta, Green,
+  Mustard and Orange as the four brand hues, black (`ink`) for text, buttons
+  and borders. Each of the 5 v1 characters is assigned one of the 4 hues
+  (`src/data/characters.ts`); Orange is reused for a second character since
+  there are 5 characters and 4 confirmed colors. Defined as CSS custom
+  properties in `src/app/globals.css`, with a small class-mapping helper at
+  `src/lib/accent.ts` (`accentClasses`) used everywhere a hero/card needs a
+  background, tint, or matching text color. These hex values are read off
+  screenshots, not color-picked from source files, so treat them as close
+  rather than pixel-exact; swap in the real values in `globals.css` if you
+  have them from the brand's style guide.
 - **Fonts**: Baloo 2 (headings), Nunito (body), Caveat (logo script accent).
-  Also unconfirmed against the real brand per the plan, swap in
-  `src/app/layout.tsx`.
+  Still unconfirmed against the real brand, swap in `src/app/layout.tsx`.
 - **Characters**: `CharacterAvatar` and the character-page hero render a name
   in a dashed circle rather than a guessed illustration. Swap in the real
   artwork from Emerson once it's exported; the layout doesn't need to change.

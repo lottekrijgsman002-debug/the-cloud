@@ -8,7 +8,7 @@ import { ProfileMenu } from "@/components/nav/profile-menu";
 
 export function TopNav({ locale }: { locale: Locale }) {
   return (
-    <header className="sticky top-0 z-40 bg-sky/30 backdrop-blur">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3">
         <Logo size={52} />
 
@@ -17,7 +17,7 @@ export function TopNav({ locale }: { locale: Locale }) {
             <Link
               key={href}
               href={href}
-              className="flex items-center gap-1.5 rounded-full px-3 py-2 font-display text-sm font-semibold text-ink-soft transition-colors hover:bg-white/60 hover:text-ink"
+              className="flex items-center gap-1.5 rounded-full px-3 py-2 font-display text-sm font-semibold text-ink-soft transition-colors hover:bg-orange/10 hover:text-ink"
             >
               <Icon className="h-4 w-4 opacity-70" />
               {t(label, locale)}

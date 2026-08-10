@@ -20,7 +20,7 @@ export interface Character {
   slug: string;
   name: string;
   moodWords: Localized[];
-  accentToken: "sunshine" | "sky" | "coral" | "leaf" | "berry";
+  accentToken: "magenta" | "green" | "mustard" | "orange";
   voiceLine: Localized;
 }
 
