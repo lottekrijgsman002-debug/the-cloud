@@ -23,27 +23,33 @@ export function Shelf({
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">{title}</h2>
+        <h2 className="flex items-center gap-3 font-display text-2xl font-bold text-ink sm:text-4xl">
+          <span className="h-8 w-2 rounded-full bg-orange sm:h-10" />
+          {title}
+        </h2>
         {seeAllHref && (
           <Link
             href={seeAllHref}
-            className="flex items-center gap-1 font-display text-sm font-semibold text-orange-deep transition-all hover:gap-2 hover:translate-x-1"
+            className="group/link flex items-center gap-1.5 rounded-full border-2 border-orange px-4 py-2 font-display text-sm font-bold text-orange-deep transition-all duration-200 hover:gap-3 hover:bg-orange hover:text-white hover:shadow-lg"
           >
             {t(ui.common.seeAll, locale)}
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" />
           </Link>
         )}
       </div>
-      <div className="-mx-5 flex gap-4 overflow-x-auto px-5 pb-2">
-        {items.map((item) => {
+      <div className="-mx-5 flex gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-12 sm:gap-6 sm:overflow-visible sm:px-0">
+        {items.map((item, idx) => {
           const character = characters.find((c) => c.id === item.characterId);
+          const colSpan = idx === 0 ? "sm:col-span-7" : idx === 1 ? "sm:col-span-5" : "sm:col-span-4";
           return (
-            <ContentCard
-              key={item.id}
-              item={item}
-              locale={locale}
-              accentToken={character?.accentToken ?? "orange"}
-            />
+            <div key={item.id} className={colSpan}>
+              <ContentCard
+                item={item}
+                locale={locale}
+                accentToken={character?.accentToken ?? "orange"}
+                featured={idx === 0}
+              />
+            </div>
           );
         })}
       </div>

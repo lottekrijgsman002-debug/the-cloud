@@ -26,6 +26,7 @@ export const ui = {
     newBadge: { nl: "Nieuw", en: "New" },
     bedtimeBadge: { nl: "Voor het slapen", en: "Bedtime pick" },
     archiveBadge: { nl: "Archief", en: "Archive" },
+    featuredBadge: { nl: "Uitgelicht", en: "Featured" },
     seeAll: { nl: "Bekijk alles", en: "See all" },
     relatedTitle: { nl: "Meer om te ontdekken", en: "More to discover" },
   },

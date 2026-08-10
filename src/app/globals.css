@@ -91,39 +91,45 @@ h1, h2, h3, h4, .font-display {
   animation: fade-in 500ms ease-out;
 }
 
-/* Character-specific background patterns */
+.content-card-glow:hover {
+  box-shadow: 0 20px 40px -8px var(--glow-color), 0 0 0 3px var(--glow-color-solid);
+}
+
+/* Character-specific background patterns — bold enough to read as texture from across the room */
 .pattern-loulou {
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 2px, transparent 2px),
-    radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.06) 1.5px, transparent 1.5px);
-  background-size: 200px 200px, 300px 300px, 250px 250px;
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.28) 3px, transparent 3px),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.24) 5px, transparent 5px),
+    radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.2) 4px, transparent 4px),
+    radial-gradient(circle at 65% 45%, rgba(255, 255, 255, 0.18) 2.5px, transparent 2.5px);
+  background-size: 140px 140px, 220px 220px, 180px 180px, 100px 100px;
 }
 
 .pattern-mozy {
   background-image:
-    linear-gradient(45deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(-45deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(45deg, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+  background-size: 36px 36px;
 }
 
 .pattern-guru {
   background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 60px 60px;
-  background-position: 0 0, 30px 30px;
+    radial-gradient(circle, rgba(255, 255, 255, 0.26) 3px, transparent 3px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.16) 2px, transparent 2px);
+  background-size: 56px 56px, 56px 56px;
+  background-position: 0 0, 28px 28px;
 }
 
 .pattern-jazzcat {
   background-image:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 50px 50px;
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
+    linear-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+  background-size: 44px 44px;
 }
 
 .pattern-clock {
   background-image:
-    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08) 2px, transparent 2px),
-    radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.08) 3px, transparent 3px);
-  background-size: 150px 150px, 200px 200px;
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.22) 4px, transparent 4px),
+    radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.18) 6px, transparent 6px);
+  background-size: 120px 120px, 170px 170px;
 }
