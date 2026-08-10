@@ -28,7 +28,7 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
 
   return (
     <>
-      <section className={`relative overflow-hidden ${accent.bg}`}>
+      <section className={`relative overflow-hidden ${accent.bg} ${accent.pattern}`}>
         <SkyScene />
         <CharacterDecorations character={character} />
         <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent`}></div>

@@ -12,6 +12,8 @@ type AccentClasses = {
   onBg: string;
   /** Softer/secondary text color to use on top of the full-strength `bg`. */
   onBgSoft: string;
+  /** Subtle background pattern class for character pages. */
+  pattern: string;
 };
 
 export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
@@ -23,6 +25,7 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     border: "border-magenta",
     onBg: "text-white",
     onBgSoft: "text-white/80",
+    pattern: "pattern-loulou",
   },
   green: {
     bg: "bg-green",
@@ -32,6 +35,7 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     border: "border-green",
     onBg: "text-white",
     onBgSoft: "text-white/80",
+    pattern: "pattern-guru",
   },
   mustard: {
     bg: "bg-mustard",
@@ -41,6 +45,7 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     border: "border-mustard",
     onBg: "text-ink",
     onBgSoft: "text-ink-soft",
+    pattern: "pattern-mozy",
   },
   orange: {
     bg: "bg-orange",
@@ -50,5 +55,6 @@ export const accentClasses: Record<Character["accentToken"], AccentClasses> = {
     border: "border-orange",
     onBg: "text-white",
     onBgSoft: "text-white/80",
+    pattern: "pattern-clock",
   },
 };
