@@ -1,0 +1,70 @@
+import { notFound } from "next/navigation";
+import { getLocale } from "@/lib/get-locale";
+import { t } from "@/lib/locale";
+import { ui } from "@/lib/ui-strings";
+import { contentRepository } from "@/lib/content-repository";
+import { characters } from "@/data/characters";
+import { accentClasses } from "@/lib/accent";
+import { SkyScene } from "@/components/sky-scene";
+import { Shelf } from "@/components/content/shelf";
+
+export function generateStaticParams() {
+  return characters.map((c) => ({ slug: c.slug }));
+}
+
+export default async function CharacterPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const locale = await getLocale();
+  const character = await contentRepository.getCharacter(slug);
+  if (!character) notFound();
+
+  const allCharacters = await contentRepository.getCharacters();
+  const content = await contentRepository.getContentForCharacter(character.id);
+  const listenItems = content.filter((c) => c.pillar === "listen");
+  const otherItems = content.filter((c) => c.pillar !== "listen");
+  const accent = accentClasses[character.accentToken];
+
+  return (
+    <>
+      <section className={`relative overflow-hidden ${accent.bgSoft}`}>
+        <SkyScene />
+        <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-6 px-5 py-16 text-center sm:py-20">
+          <div
+            className={`flex h-32 w-32 items-center justify-center rounded-full border-[3px] border-dashed bg-white shadow-md ${accent.border}`}
+          >
+            <span className="font-display px-3 text-center text-base font-semibold text-ink">
+              {character.name}
+            </span>
+          </div>
+          <div className="flex flex-wrap justify-center gap-2">
+            {character.moodWords.map((word) => (
+              <span
+                key={word.en}
+                className={`rounded-full bg-white px-3 py-1 font-display text-xs font-semibold ${accent.text}`}
+              >
+                {t(word, locale)}
+              </span>
+            ))}
+          </div>
+          <h1 className="font-display text-3xl font-semibold text-ink sm:text-4xl">{character.name}</h1>
+          <p className="max-w-xl text-lg leading-relaxed text-ink-soft">{t(character.voiceLine, locale)}</p>
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-6xl space-y-14 px-5 py-14">
+        <Shelf
+          title={`${t(ui.character.listenWith, locale)} ${character.name}`}
+          items={listenItems}
+          characters={allCharacters}
+          locale={locale}
+        />
+        <Shelf
+          title={`${t(ui.character.moreFrom, locale)} ${character.name}`}
+          items={otherItems}
+          characters={allCharacters}
+          locale={locale}
+        />
+      </div>
+    </>
+  );
+}

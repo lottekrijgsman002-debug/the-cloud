@@ -1,23 +1,28 @@
 # Loulou & Lou App
 
-The first version of the Loulou & Lou web app: a bilingual (EN/NL), storybook-styled
-home for the whole Loulou & Lou world. Music, Verhalen (stories and audiobooks) and
-the Character World are the primary sections, with the Sprookjesfilm and Theatershow
-following as Phase 2, matching the roadmap in the App Spec doc supplied by the team.
-
-This is a **web preview** of that vision, not the native app itself. The App Spec
-calls for a native iOS/Android app (React Native, in-app audio streaming, accounts,
-offline downloads, parental gates, COPPA/GDPR-K compliance, a headless CMS). That is
-a separate, larger engineering effort. This repo focuses on the brand, layout and
-information architecture so there is something real to react to, built with
-placeholder content where the real assets are not yet available.
+A bilingual (Dutch primary, English toggle), storybook-styled web app for the
+Loulou & Lou world, built from the Build Plan doc: Music, Watch & Imagine,
+Verhalen (stories & audiobooks), Character World, Favorites, the Loulou & Lou
+Club, and an Account/child-profile area. This is the "web-first, mobile-ready
+content and discovery app" described in Section 1 of the plan (platform
+handoff to Spotify/Apple Music/YouTube, not custom streaming).
 
 ## Stack
 
-- [Next.js](https://nextjs.org) (App Router) + TypeScript
-- Tailwind CSS v4
-- Custom lightweight i18n (no external i18n library): `/en` and `/nl` routes,
-  auto-detected from the visitor's browser language, switchable any time
+- [Next.js](https://nextjs.org) (App Router) + TypeScript, Tailwind CSS v4
+- **Data layer**: local seed data today, shaped exactly like the plan's
+  content model (Section 4) behind an async repository
+  (`src/lib/content-repository.ts`), so it's a contained swap once real
+  services are connected. Nothing that calls this module needs to change.
+- **Backend (not yet wired up)**: the plan calls for Supabase (auth, parent
+  account, favorites, Postgres) and Sanity (CMS for characters and content).
+  Both need real projects created by you, since account signup isn't
+  something this session can do on your behalf. Until then, the account,
+  favorites and continue-listening features work for real, just against
+  `localStorage` on your device instead of Supabase (see
+  `src/context/account-context.tsx`).
+- **Analytics**: PostHog is specified (Section 6) but not wired up; there's
+  nowhere to send events without a project.
 
 ## Getting started
 
@@ -26,68 +31,85 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000), you'll be redirected to
-`/en` or `/nl` depending on your browser language.
+Open [http://localhost:3000](http://localhost:3000).
 
 ## Project structure
 
 ```
 src/
-  app/[locale]/          Every page, nested under the language segment
-    page.tsx             Home
-    music/                Music & Albums
-    stories/               Verhalen & Luisterverhalen (Stories & Audiobooks)
-    world/                  Character World ("Meet the World")
-    about/                   For Grown-ups (trust, safety, contact)
-    sprookjesfilm/            Sprookjesfilm (Phase 2, still built and reachable)
-    theatershow/               Theatershow (Phase 2, still built and reachable)
-  components/            Header, Footer, cards, icons, decorative SVGs
-  data/site.ts            Social links + primary/secondary section lists
-  i18n/
-    dictionaries/en.json  All English text
-    dictionaries/nl.json  All Dutch text
-  proxy.ts                Locale detection & redirect (Next's "middleware")
+  app/
+    page.tsx                 Home
+    listen/, watch/,          Pillar hubs (browse, filter by character/new)
+    stories/, shows/
+    characters/[slug]/       Character page template (5 in v1)
+    content/[id]/             Content detail page, external platform handoff
+    favorites/                Unified saved + continue-listening
+    club/                     Loulou & Lou Club signup (email capture only)
+    account/                  Child profile (name + age band) + language
+    search/                   Client-side search over characters/content
+  components/
+    nav/                     Top nav (desktop) + bottom nav (mobile) + footer
+    content/                 Shelf, ContentCard, FavoriteButton, PillarHub, etc.
+  context/account-context.tsx Local stand-in for Supabase (see above)
+  data/                      Seed characters.ts + content-items.ts
+  lib/
+    types.ts                 The data model from Build Plan Section 4
+    content-repository.ts    The Supabase/Sanity swap point
+    ui-strings.ts             Static UI copy (nav, buttons), localized {nl,en}
+    accent.ts                 Per-character accent color -> Tailwind classes
+    get-locale.ts / locale.ts Cookie-based language, no locale prefix in URLs
 ```
 
 ## Design foundations
 
-Palette and design principles come from Section 4 of the App Spec doc:
+Palette and principles come from Build Plan Section 8:
 
-- **Colors**: Sunshine Yellow `#F5B733` (hero backgrounds, primary buttons),
-  Sky Blue `#6EC6E8` (navigation, headers), Warm Coral `#F0754F` (highlights,
-  badges, calls to action), a warm near-black Ink `#2B2420` for text, and a
-  Cream `#FFF8EC` page background. Defined as CSS custom properties at the top
-  of `src/app/globals.css`. The spec itself flags these as a starting palette
-  pending the official brand style guide, so swap the hex values there once
-  you have the confirmed brand colors.
-- **Fonts**: Baloo 2 (headings), Nunito (body) and Caveat (the logo's script
-  accent), loaded in `src/app/[locale]/layout.tsx`.
-- **Principles**: storybook, not dashboard. Rounded shapes, soft shadows
-  instead of hard UI chrome, a gentle drifting sun-and-clouds motif
-  (`src/components/divider.tsx`), and characters used as navigation wherever
-  possible.
+- **Colors**: white/paper background, Sunshine Yellow (hero, primary
+  buttons), Sky Blue (navigation), plus Coral/Leaf/Berry as additional
+  character-specific accents within that shared palette. All flagged in the
+  plan as a starting direction pending a color-picker pass on your real
+  brand assets, defined as CSS custom properties in `src/app/globals.css`.
+- **Fonts**: Baloo 2 (headings), Nunito (body), Caveat (logo script accent).
+  Also unconfirmed against the real brand per the plan, swap in
+  `src/app/layout.tsx`.
+- **Characters**: `CharacterAvatar` and the character-page hero render a name
+  in a dashed circle rather than a guessed illustration. Swap in the real
+  artwork from Emerson once it's exported; the layout doesn't need to change.
+
+## Data model
+
+`src/lib/types.ts` mirrors Build Plan Section 4 field for field: `Character`,
+`ContentItem` (with `externalRef: {platform, uri}` for the Spotify/Apple
+Music/YouTube handoff), `UserAccount`, `ChildProfile` (age band only, no
+birth date, no child PII), `Favorite`, `ContinueListeningEntry`,
+`ClubSignup`. Seed data lives in `src/data/`.
 
 ## Make it yours
 
-1. **Colors and fonts**, see above.
-2. **Real links**: `src/data/site.ts` has your YouTube/Spotify/Apple
-   Music/Instagram/Facebook URLs and contact email, all marked `TODO`.
-3. **Real content**: the Music, Sprookjesfilm, Stories and Theatershow pages
-   currently render placeholder cards (dashed borders, "coming soon" badges).
-   Replace the placeholder arrays in each `src/app/[locale]/.../page.tsx` with
-   your real albums, episodes, stories and shows (titles, cover art, links).
-4. **Characters**: `CharacterAvatar` (`src/components/character-avatar.tsx`)
-   renders a name in a dashed circle rather than attempting a likeness of your
-   real character illustrations by Emerson. Swap it for the real artwork once
-   you have it exported.
-5. **Copy**: all text lives in `src/i18n/dictionaries/en.json` and `nl.json`,
-   organized by page. Edit directly; both files must stay in sync (same keys).
+1. **Connect Supabase**: create a project, then replace
+   `src/context/account-context.tsx`'s localStorage read/write with real
+   Supabase queries. The `useAccount()` hook's API is designed to stay the
+   same at every call site.
+2. **Connect Sanity**: create a project with the schema in
+   `src/lib/types.ts`, then replace the bodies of the functions in
+   `src/lib/content-repository.ts` with real Sanity queries.
+3. **Real content and links**: `src/data/characters.ts` and
+   `src/data/content-items.ts` are seeded with the v1 roster (Loulou & Lou,
+   Guru Woof, Maestro Mozy, JazzCat Louis, Captain Clock). Every
+   `externalRef` currently points at your general channel/profile link in
+   `src/lib/site-config.ts`; swap in real per-track/per-video URIs as they're
+   confirmed.
+4. **Colors, fonts, character art**: see Design foundations above.
+5. **Copy**: static UI strings live in `src/lib/ui-strings.ts`; content text
+   lives per-field on each character/content item in `src/data/`. Both are
+   `{nl, en}` objects, matching the plan's "localized from day one" approach
+   (Section 5).
 
 ## Notes
 
-- Locale routing lives in `src/proxy.ts` (Next.js 16 renamed `middleware.ts`
-  to `proxy.ts`). It reads a `NEXT_LOCALE` cookie first, then the browser's
-  `Accept-Language` header, defaulting to Dutch.
-- No audio/video is embedded yet, every section links out to YouTube, Spotify
-  and Apple Music. In-app playback, accounts, offline downloads and the other
-  native-app features in the App Spec are future work for the native build.
+- No locale prefix in URLs, matching the plan's sitemap (Section 2) exactly.
+  Language is a cookie-backed toggle (in Account, or the header), not a
+  route segment.
+- Filtering on the Listen/Watch/Stories/Shows hubs is done via query params
+  (`?character=`, `?filter=new`) so it works without client JS; the pages
+  themselves are Server Components.

@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  /* Loulou & Lou App Spec v1.0, Section 4.1: starting palette */
-  --color-cream: #fff8ec;
+  /* Loulou & Lou Build Plan, Section 8: starting design tokens.
+     Exact hex values are flagged in the plan as pending a color-picker
+     pass on real brand assets (logo, character illustrations); these are
+     the "best guess, refine later" starting direction. */
+  --color-paper: #ffffff;
   --color-ink: #2b2420;
   --color-ink-soft: #5a4f45;
 
@@ -12,15 +15,21 @@
   --color-sky: #6ec6e8;
   --color-sky-deep: #4aa8ce;
 
+  /* Character-specific accents, distinct atmosphere within the shared
+     yellow/sky palette (Section 8). */
   --color-coral: #f0754f;
   --color-coral-deep: #d65a38;
+  --color-leaf: #6fa97a;
+  --color-leaf-deep: #4f8860;
+  --color-berry: #a6528c;
+  --color-berry-deep: #863c70;
 
-  --background: var(--color-cream);
+  --background: var(--color-paper);
   --foreground: var(--color-ink);
 }
 
 @theme inline {
-  --color-cream: var(--color-cream);
+  --color-paper: var(--color-paper);
   --color-ink: var(--color-ink);
   --color-ink-soft: var(--color-ink-soft);
 
@@ -30,6 +39,10 @@
   --color-sky-deep: var(--color-sky-deep);
   --color-coral: var(--color-coral);
   --color-coral-deep: var(--color-coral-deep);
+  --color-leaf: var(--color-leaf);
+  --color-leaf-deep: var(--color-leaf-deep);
+  --color-berry: var(--color-berry);
+  --color-berry-deep: var(--color-berry-deep);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
