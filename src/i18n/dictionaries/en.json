@@ -163,6 +163,31 @@
       "name": "Jazz Cat",
       "role": "The jazz musician",
       "description": "Smooth, cool and always ready for an improvised singalong on the guitar."
+    },
+    "cowboyJack": {
+      "name": "Cowboy Jack",
+      "role": "",
+      "description": "More about Cowboy Jack is on the way."
+    },
+    "musicbox": {
+      "name": "Musicbox & Babyballerina",
+      "role": "",
+      "description": "More about Musicbox & Babyballerina is on the way."
+    },
+    "yinAndJan": {
+      "name": "Yin and Jan",
+      "role": "",
+      "description": "More about Yin and Jan is on the way."
+    },
+    "mamaCozy": {
+      "name": "Mama Cozy",
+      "role": "",
+      "description": "More about Mama Cozy is on the way."
+    },
+    "loustock": {
+      "name": "Loustock",
+      "role": "",
+      "description": "More about Loustock is on the way."
     }
   },
   "footer": {

@@ -23,16 +23,16 @@ const socialLinks = [
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
-    <footer className="mt-24 bg-ink text-paper">
+    <footer className="mt-24 border-t-2 border-ink bg-paper text-ink">
       <div className="mx-auto max-w-6xl px-5 pb-10 pt-14">
         <div className="grid gap-10 py-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Logo variant="light" />
-            <p className="mt-4 max-w-xs text-sm text-paper/70">{dict.footer.tagline}</p>
+            <Logo />
+            <p className="mt-4 max-w-xs text-sm text-ink-soft">{dict.footer.tagline}</p>
           </div>
 
           <div>
-            <div className="font-display text-sm font-semibold uppercase tracking-wide text-orange">
+            <div className="font-display text-sm font-semibold uppercase tracking-wide text-orange-deep">
               {dict.footer.sections}
             </div>
             <ul className="mt-3 space-y-2">
@@ -40,7 +40,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 <li key={s.key}>
                   <Link
                     href={`/${locale}${s.href}`}
-                    className="flex items-center gap-2 text-sm text-paper/80 hover:text-paper"
+                    className="flex items-center gap-2 text-sm text-ink-soft hover:text-ink"
                   >
                     <SectionIcon section={s.key} className="h-4 w-4 opacity-70" />
                     {dict.nav[s.key]}
@@ -51,7 +51,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
 
           <div>
-            <div className="font-display text-sm font-semibold uppercase tracking-wide text-orange">
+            <div className="font-display text-sm font-semibold uppercase tracking-wide text-orange-deep">
               {dict.footer.follow}
             </div>
             <ul className="mt-3 flex flex-wrap gap-3">
@@ -62,7 +62,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-paper/10 transition-colors hover:bg-paper/20"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-white transition-transform hover:-translate-y-0.5"
                   >
                     <Icon className="h-4 w-4" />
                   </a>
@@ -72,7 +72,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
 
           <div>
-            <div className="font-display text-sm font-semibold uppercase tracking-wide text-orange">
+            <div className="font-display text-sm font-semibold uppercase tracking-wide text-orange-deep">
               {dict.footer.newsletterTitle}
             </div>
             <NewsletterForm
@@ -82,7 +82,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-paper/15 pt-6 text-xs text-paper/60 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-ink/15 pt-6 text-xs text-ink-soft sm:flex-row">
           <p>
             © {new Date().getFullYear()} Loulou & Lou. {dict.footer.rights}
           </p>

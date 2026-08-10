@@ -27,5 +27,5 @@ export const sections: { key: SectionKey; href: string; accent: string }[] = [
   { key: "stories", href: "/stories", accent: "green" },
   { key: "theatershow", href: "/theatershow", accent: "red" },
   { key: "world", href: "/world", accent: "magenta" },
-  { key: "about", href: "/about", accent: "ink" },
+  { key: "about", href: "/about", accent: "orange" },
 ];

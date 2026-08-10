@@ -1,6 +1,6 @@
 import { resolveLocale } from "@/i18n/resolve-locale";
 import { PageHeader } from "@/components/page-header";
-import { CharacterAvatar, type CharacterVariant } from "@/components/character-avatar";
+import { CharacterAvatar } from "@/components/character-avatar";
 
 export default async function WorldPage({
   params,
@@ -10,12 +10,17 @@ export default async function WorldPage({
   const { locale, dict } = await resolveLocale(params);
   const p = dict.pages.world;
 
-  const characters: { variant: CharacterVariant; key: keyof typeof dict.characters }[] = [
-    { variant: "loulou", key: "loulou" },
-    { variant: "lou", key: "lou" },
-    { variant: "guru-woof", key: "guruWoof" },
-    { variant: "maestro-mozy", key: "maestroMozy" },
-    { variant: "jazz-cat", key: "jazzCat" },
+  const characters: { key: keyof typeof dict.characters; accent: string }[] = [
+    { key: "loulou", accent: "magenta" },
+    { key: "lou", accent: "orange" },
+    { key: "guruWoof", accent: "green" },
+    { key: "maestroMozy", accent: "mustard" },
+    { key: "jazzCat", accent: "red" },
+    { key: "cowboyJack", accent: "orange" },
+    { key: "musicbox", accent: "magenta" },
+    { key: "yinAndJan", accent: "green" },
+    { key: "mamaCozy", accent: "mustard" },
+    { key: "loustock", accent: "red" },
   ];
 
   return (
@@ -40,13 +45,15 @@ export default async function WorldPage({
                   key={c.key}
                   className="flex flex-col items-center rounded-3xl border-2 border-ink p-6 text-center shadow-[4px_4px_0_var(--color-ink)]"
                 >
-                  <CharacterAvatar variant={c.variant} size={104} />
+                  <CharacterAvatar name={character.name} accent={c.accent} size={100} />
                   <h3 className="mt-4 font-display text-lg font-semibold uppercase text-ink">
                     {character.name}
                   </h3>
-                  <p className="mt-1 font-display text-xs font-semibold uppercase tracking-wide text-magenta-deep">
-                    {character.role}
-                  </p>
+                  {character.role && (
+                    <p className="mt-1 font-display text-xs font-semibold uppercase tracking-wide text-magenta-deep">
+                      {character.role}
+                    </p>
+                  )}
                   <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                     {character.description}
                   </p>

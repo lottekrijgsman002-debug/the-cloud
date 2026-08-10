@@ -16,8 +16,8 @@ export function HeroScene() {
     <div className="relative mx-auto flex aspect-square w-full max-w-md items-center justify-center rounded-full bg-white shadow-xl">
       <div className="flex flex-col items-center gap-5">
         <div className="flex items-end gap-6">
-          <CharacterAvatar variant="loulou" size={128} />
-          <CharacterAvatar variant="lou" size={112} className="mb-2" />
+          <CharacterAvatar name="Loulou" accent="magenta" size={128} />
+          <CharacterAvatar name="Lou" accent="orange" size={112} className="mb-2" />
         </div>
         <OpenBook />
       </div>

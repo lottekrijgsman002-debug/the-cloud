@@ -94,54 +94,39 @@ export default async function HomePage({
             <p className="mt-3 text-ink/80">{dict.home.listenSubtitle}</p>
           </div>
 
-          <div className="mx-auto mt-8 grid max-w-2xl gap-4 sm:grid-cols-3">
-            <PlatformLink
-              href={siteConfig.social.youtube}
-              label="YouTube"
-              Icon={YoutubeIcon}
-              colorClass="bg-white text-[#ff0033]"
-            />
-            <PlatformLink
-              href={siteConfig.social.spotify}
-              label="Spotify"
-              Icon={SpotifyIcon}
-              colorClass="bg-white text-[#1DB954]"
-            />
-            <PlatformLink
-              href={siteConfig.social.appleMusic}
-              label="Apple Music"
-              Icon={AppleMusicIcon}
-              colorClass="bg-white text-[#fb5c74]"
-            />
+          <div className="mx-auto mt-8 flex flex-wrap justify-center gap-4">
+            <PlatformLink href={siteConfig.social.youtube} label="YouTube" Icon={YoutubeIcon} />
+            <PlatformLink href={siteConfig.social.spotify} label="Spotify" Icon={SpotifyIcon} />
+            <PlatformLink href={siteConfig.social.appleMusic} label="Apple Music" Icon={AppleMusicIcon} />
           </div>
         </div>
       </section>
 
       {/* Characters teaser */}
-      <section className="relative overflow-hidden bg-ink text-white">
-        <DoodleField className="text-white/10" />
+      <section className="relative overflow-hidden bg-mustard">
+        <DoodleField className="text-ink/10" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 lg:grid-cols-[1.2fr_1fr]">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 font-display text-sm font-semibold uppercase text-orange">
+            <span className="inline-flex items-center gap-2 rounded-full bg-ink/10 px-4 py-1.5 font-display text-sm font-semibold uppercase text-ink">
               {dict.home.charactersEyebrow}
             </span>
-            <h2 className="mt-3 font-display text-3xl font-semibold uppercase sm:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-semibold uppercase text-ink sm:text-4xl">
               {dict.home.charactersTitle}
             </h2>
-            <p className="mt-4 max-w-xl leading-relaxed text-white/80">
+            <p className="mt-4 max-w-xl leading-relaxed text-ink/80">
               {dict.home.charactersBody}
             </p>
             <Link
               href={`/${locale}/world`}
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-magenta px-6 py-3 font-display font-semibold uppercase text-white shadow-md transition-transform hover:-translate-y-0.5"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 font-display font-semibold uppercase text-white shadow-md transition-transform hover:-translate-y-0.5"
             >
               <SparkleFriendsIcon className="h-[18px] w-[18px]" />
               {dict.home.charactersCta}
             </Link>
           </div>
           <div className="flex justify-center gap-6">
-            <CharacterAvatar variant="loulou" size={128} />
-            <CharacterAvatar variant="lou" size={128} className="mt-8" />
+            <CharacterAvatar name="Loulou" accent="magenta" size={128} />
+            <CharacterAvatar name="Lou" accent="orange" size={128} className="mt-8" />
           </div>
         </div>
       </section>

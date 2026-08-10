@@ -163,6 +163,31 @@
       "name": "Jazz Cat",
       "role": "De jazzmuzikant",
       "description": "Cool, relaxed en altijd in voor een geïmproviseerd meezingmoment op de gitaar."
+    },
+    "cowboyJack": {
+      "name": "Cowboy Jack",
+      "role": "",
+      "description": "Meer over Cowboy Jack volgt binnenkort."
+    },
+    "musicbox": {
+      "name": "Musicbox & Babyballerina",
+      "role": "",
+      "description": "Meer over Musicbox & Babyballerina volgt binnenkort."
+    },
+    "yinAndJan": {
+      "name": "Yin and Jan",
+      "role": "",
+      "description": "Meer over Yin and Jan volgt binnenkort."
+    },
+    "mamaCozy": {
+      "name": "Mama Cozy",
+      "role": "",
+      "description": "Meer over Mama Cozy volgt binnenkort."
+    },
+    "loustock": {
+      "name": "Loustock",
+      "role": "",
+      "description": "Meer over Loustock volgt binnenkort."
     }
   },
   "footer": {

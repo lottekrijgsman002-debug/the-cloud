@@ -9,7 +9,6 @@ const accentStyles: Record<string, { bg: string; text: string; iconWrap: string 
   mustard: { bg: "bg-mustard", text: "text-ink", iconWrap: "bg-ink text-mustard" },
   red: { bg: "bg-red", text: "text-white", iconWrap: "bg-white text-red" },
   orange: { bg: "bg-orange", text: "text-ink", iconWrap: "bg-ink text-orange" },
-  ink: { bg: "bg-ink", text: "text-white", iconWrap: "bg-white text-ink" },
 };
 
 export function SectionCard({

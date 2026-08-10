@@ -19,8 +19,8 @@ export default async function AboutPage({
         title={p.title}
         intro={p.intro}
         backLabel={dict.common.backHome}
-        bgClassName="bg-ink"
-        tone="light"
+        bgClassName="bg-orange"
+        tone="dark"
       />
 
       <section className="bg-paper">
@@ -69,12 +69,12 @@ export default async function AboutPage({
 
       <section className="bg-paper">
         <div className="mx-auto max-w-4xl px-5 py-14">
-          <div className="rounded-3xl bg-ink px-8 py-10 text-center text-white">
-            <h3 className="font-display text-xl font-semibold uppercase">{p.contactTitle}</h3>
-            <p className="mt-2 text-white/80">{p.contactBody}</p>
+          <div className="rounded-3xl border-2 border-ink bg-white px-8 py-10 text-center shadow-[4px_4px_0_var(--color-ink)]">
+            <h3 className="font-display text-xl font-semibold uppercase text-ink">{p.contactTitle}</h3>
+            <p className="mt-2 text-ink-soft">{p.contactBody}</p>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="mt-5 inline-block rounded-full bg-orange px-6 py-3 font-display font-semibold uppercase text-ink transition-transform hover:-translate-y-0.5"
+              className="mt-5 inline-block rounded-full bg-ink px-6 py-3 font-display font-semibold uppercase text-white transition-transform hover:-translate-y-0.5"
             >
               {siteConfig.email}
             </a>
