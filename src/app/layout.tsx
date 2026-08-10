@@ -28,7 +28,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={`${heading.variable} ${body.variable} antialiased`}>
         <AccountProvider>
           <TopNav locale={locale} />
-          <main className="pb-20 sm:pb-0">{children}</main>
+          <main className="animate-fade-in pb-20 sm:pb-0">{children}</main>
           <Footer locale={locale} />
           <BottomNav locale={locale} />
         </AccountProvider>

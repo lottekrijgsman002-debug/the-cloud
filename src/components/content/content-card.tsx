@@ -23,10 +23,10 @@ export function ContentCard({
   return (
     <Link
       href={`/content/${item.id}`}
-      className="group flex w-56 shrink-0 flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-md transition-transform hover:-translate-y-1"
+      className="group flex w-56 shrink-0 flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-md transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:-translate-y-2"
     >
-      <div className={`relative flex h-32 items-center justify-center ${accent.bgSoft}`}>
-        <Icon className={`h-10 w-10 ${accent.text}`} />
+      <div className={`relative flex h-32 items-center justify-center ${accent.bgSoft} transition-all duration-300 group-hover:brightness-110`}>
+        <Icon className={`h-10 w-10 ${accent.text} transition-transform duration-300 group-hover:scale-125`} />
         <div className="absolute right-2 top-2">
           <FavoriteButton contentId={item.id} size="sm" />
         </div>

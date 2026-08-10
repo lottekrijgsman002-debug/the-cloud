@@ -22,12 +22,12 @@ export function Shelf({
 
   return (
     <div>
-      <div className="mb-4 flex items-center justify-between">
-        <h2 className="font-display text-xl font-semibold text-ink sm:text-2xl">{title}</h2>
+      <div className="mb-6 flex items-center justify-between">
+        <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">{title}</h2>
         {seeAllHref && (
           <Link
             href={seeAllHref}
-            className="flex items-center gap-1 font-display text-sm font-semibold text-orange-deep"
+            className="flex items-center gap-1 font-display text-sm font-semibold text-orange-deep transition-all hover:gap-2 hover:translate-x-1"
           >
             {t(ui.common.seeAll, locale)}
             <ChevronRight className="h-4 w-4" />

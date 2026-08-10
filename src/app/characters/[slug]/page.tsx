@@ -29,34 +29,34 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
     <>
       <section className={`relative overflow-hidden ${accent.bg}`}>
         <SkyScene />
-        <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-6 px-5 py-16 text-center sm:py-20">
-          <div className="flex h-32 w-32 overflow-hidden rounded-full border-[3px] border-white/70 bg-white/15 shadow-md">
+        <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-8 px-5 py-20 text-center sm:gap-10 sm:py-28">
+          <div className="flex h-48 w-48 overflow-hidden rounded-full border-[4px] border-white/70 bg-white/15 shadow-lg sm:h-56 sm:w-56">
             {character.portrait ? (
               <Image
                 src={character.portrait}
                 alt={character.name}
-                width={128}
-                height={128}
+                width={224}
+                height={224}
                 className="h-full w-full object-cover"
               />
             ) : (
-              <span className={`flex w-full items-center justify-center font-display px-3 text-center text-base font-semibold ${accent.onBg}`}>
+              <span className={`flex w-full items-center justify-center font-display px-3 text-center text-2xl font-semibold ${accent.onBg}`}>
                 {character.name}
               </span>
             )}
           </div>
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center gap-3">
             {character.moodWords.map((word) => (
               <span
                 key={word.en}
-                className={`rounded-full bg-white px-3 py-1 font-display text-xs font-semibold ${accent.text}`}
+                className={`rounded-full bg-white px-4 py-2 font-display text-sm font-semibold ${accent.text} transition-transform hover:scale-110`}
               >
                 {t(word, locale)}
               </span>
             ))}
           </div>
-          <h1 className={`font-display text-3xl font-semibold sm:text-4xl ${accent.onBg}`}>{character.name}</h1>
-          <p className={`max-w-xl text-lg leading-relaxed ${accent.onBgSoft}`}>{t(character.voiceLine, locale)}</p>
+          <h1 className={`font-display text-5xl font-bold sm:text-6xl leading-tight ${accent.onBg}`}>{character.name}</h1>
+          <p className={`max-w-2xl text-xl leading-relaxed ${accent.onBgSoft}`}>{t(character.voiceLine, locale)}</p>
         </div>
       </section>
 
