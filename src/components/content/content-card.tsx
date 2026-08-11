@@ -6,6 +6,7 @@ import { ui } from "@/lib/ui-strings";
 import { accentClasses } from "@/lib/accent";
 import { NoteIcon, FilmIcon, BookIcon, MaskIcon } from "@/components/icons";
 import { FavoriteButton } from "@/components/content/favorite-button";
+import { EqualizerBars } from "@/components/equalizer-bars";
 
 const pillarIcon = { listen: NoteIcon, watch: FilmIcon, stories: BookIcon, shows: MaskIcon };
 
@@ -37,9 +38,17 @@ export function ContentCard({
           featured ? "sm:h-full sm:w-2/5" : ""
         }`}
       >
-        <Icon
-          className={`${featured ? "h-14 w-14 sm:h-16 sm:w-16" : "h-10 w-10"} ${accent.text} transition-transform duration-300 ease-out group-hover:scale-150 group-hover:-translate-y-1 group-hover:rotate-12`}
-        />
+        {item.pillar === "listen" ? (
+          <div
+            className={`${featured ? "h-10 sm:h-12" : "h-7"} ${accent.text} transition-transform duration-300 ease-out group-hover:scale-125`}
+          >
+            <EqualizerBars />
+          </div>
+        ) : (
+          <Icon
+            className={`${featured ? "h-14 w-14 sm:h-16 sm:w-16" : "h-10 w-10"} ${accent.text} transition-transform duration-300 ease-out group-hover:scale-150 group-hover:-translate-y-1 group-hover:rotate-12`}
+          />
+        )}
         <div className="absolute right-2 top-2">
           <FavoriteButton contentId={item.id} size="sm" />
         </div>

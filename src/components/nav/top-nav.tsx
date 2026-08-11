@@ -20,7 +20,7 @@ export function TopNav({ locale }: { locale: Locale }) {
               transitionTypes={[href === "/" ? "nav-back" : "nav-forward"]}
               className="flex items-center gap-1.5 rounded-full px-3 py-2 font-display text-sm font-semibold text-ink-soft transition-colors hover:bg-orange/10 hover:text-ink"
             >
-              <Icon className="h-4 w-4 opacity-70" />
+              <Icon className={`h-4 w-4 opacity-70 ${href === "/listen" ? "animate-note-bounce" : ""}`} />
               {t(label, locale)}
             </Link>
           ))}

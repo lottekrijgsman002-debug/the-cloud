@@ -269,3 +269,50 @@ h1, h2, h3, h4, .font-display {
     animation-delay: 0s !important;
   }
 }
+
+/* Equalizer bars, standing in for the note icon on music cards */
+@keyframes eq-bounce {
+  0%, 100% { height: 30%; }
+  50% { height: 100%; }
+}
+
+.eq-bar {
+  animation: eq-bounce 0.9s ease-in-out infinite;
+}
+
+/* Musical staff-line background, for the Listen hub specifically */
+.pattern-staff {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.24) 0px,
+    rgba(255, 255, 255, 0.24) 2px,
+    transparent 2px,
+    transparent 10px,
+    rgba(255, 255, 255, 0.24) 10px,
+    rgba(255, 255, 255, 0.24) 12px,
+    transparent 12px,
+    transparent 20px,
+    rgba(255, 255, 255, 0.24) 20px,
+    rgba(255, 255, 255, 0.24) 22px,
+    transparent 22px,
+    transparent 30px,
+    rgba(255, 255, 255, 0.24) 30px,
+    rgba(255, 255, 255, 0.24) 32px,
+    transparent 32px,
+    transparent 40px,
+    rgba(255, 255, 255, 0.24) 40px,
+    rgba(255, 255, 255, 0.24) 42px,
+    transparent 42px,
+    transparent 90px
+  );
+}
+
+/* Idle bob on the Listen nav icon, hinting at the brand's musicality */
+@keyframes note-bounce {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-2px) rotate(4deg); }
+}
+
+.animate-note-bounce {
+  animation: note-bounce 1.6s ease-in-out infinite;
+}

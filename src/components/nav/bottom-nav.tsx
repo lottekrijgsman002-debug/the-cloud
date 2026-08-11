@@ -13,7 +13,7 @@ export function BottomNav({ locale }: { locale: Locale }) {
           transitionTypes={[href === "/" ? "nav-back" : "nav-forward"]}
           className="flex flex-1 flex-col items-center gap-0.5 px-1 py-2 text-ink-soft"
         >
-          <Icon className="h-5 w-5" />
+          <Icon className={`h-5 w-5 ${href === "/listen" ? "animate-note-bounce" : ""}`} />
           <span className="font-display text-[0.65rem] font-semibold leading-none">{t(label, locale)}</span>
         </Link>
       ))}

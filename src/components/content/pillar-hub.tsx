@@ -9,7 +9,7 @@ import { SkyScene } from "@/components/sky-scene";
 import { WaveDivider } from "@/components/wave-divider";
 import { AmbientSparkles } from "@/components/ambient-sparkles";
 import { PageTurn } from "@/components/page-turn";
-import { FlourishIcon } from "@/components/icons";
+import { FlourishIcon, NoteIcon } from "@/components/icons";
 
 const pillarAccent: Record<Pillar, keyof typeof accentClasses> = {
   listen: "mustard",
@@ -45,14 +45,30 @@ export async function PillarHub({
 
   const basePath = `/${pillar}`;
   const accent = accentClasses[pillarAccent[pillar]];
+  const isListen = pillar === "listen";
+  const floatingNotes = [
+    { top: "18%", left: "10%", size: 22, animation: "animate-float-slow" },
+    { top: "68%", left: "6%", size: 16, animation: "animate-float-slower" },
+    { top: "24%", left: "90%", size: 18, animation: "animate-float-slower" },
+    { top: "72%", left: "92%", size: 24, animation: "animate-float-slow" },
+  ];
 
   return (
     <PageTurn>
       <section
-        className={`relative overflow-hidden ${accent.bg} ${accent.pattern}`}
+        className={`relative overflow-hidden ${accent.bg} ${isListen ? "pattern-staff" : accent.pattern}`}
         style={{ boxShadow: "inset 0 0 0 3px rgba(255,255,255,0.4), inset 0 0 0 11px rgba(255,255,255,0.15)" }}
       >
         <SkyScene />
+        {isListen &&
+          floatingNotes.map((n, i) => (
+            <NoteIcon
+              key={i}
+              className={`pointer-events-none absolute text-white/50 ${n.animation}`}
+              style={{ top: n.top, left: n.left, width: n.size, height: n.size }}
+              aria-hidden="true"
+            />
+          ))}
         <FlourishIcon className="pointer-events-none absolute left-6 top-6 h-7 w-11 text-white/60" aria-hidden="true" />
         <FlourishIcon className="pointer-events-none absolute right-6 top-6 h-7 w-11 -scale-x-100 text-white/60" aria-hidden="true" />
         <FlourishIcon className="pointer-events-none absolute bottom-6 left-6 h-7 w-11 -scale-y-100 text-white/60" aria-hidden="true" />
