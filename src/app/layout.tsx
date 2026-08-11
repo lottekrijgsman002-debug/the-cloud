@@ -5,6 +5,7 @@ import { AccountProvider } from "@/context/account-context";
 import { TopNav } from "@/components/nav/top-nav";
 import { BottomNav } from "@/components/nav/bottom-nav";
 import { Footer } from "@/components/nav/footer";
+import { BookmarkRibbon } from "@/components/bookmark-ribbon";
 import "./globals.css";
 
 // Stand-ins for the real brand fonts (Daddy in Space DEMO, Museo), which
@@ -28,6 +29,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={`${heading.variable} ${body.variable} antialiased`}>
         <AccountProvider>
           <TopNav locale={locale} />
+          <BookmarkRibbon locale={locale} />
           <main className="animate-fade-in pb-20 sm:pb-0">{children}</main>
           <Footer locale={locale} />
           <BottomNav locale={locale} />

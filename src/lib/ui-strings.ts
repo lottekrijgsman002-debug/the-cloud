@@ -31,7 +31,6 @@ export const ui = {
     relatedTitle: { nl: "Meer om te ontdekken", en: "More to discover" },
   },
   home: {
-    prologueLabel: { nl: "Voorwoord", en: "Prologue" },
     heroEyebrow: { nl: "Welkom bij", en: "Welcome to" },
     heroTitle: { nl: "De wereld van Loulou & Lou", en: "The World of Loulou & Lou" },
     heroSubtitle: {
@@ -51,7 +50,6 @@ export const ui = {
     },
   },
   hubs: {
-    partLabel: { nl: "Deel", en: "Part" },
     listenTitle: { nl: "Luister", en: "Listen" },
     listenIntro: {
       nl: "Alle liedjes van Loulou & Lou, gefilterd op personage, stemming of leeftijd.",
@@ -76,7 +74,6 @@ export const ui = {
     filterNew: { nl: "Nieuw", en: "New" },
   },
   character: {
-    chapterLabel: { nl: "Hoofdstuk", en: "Chapter" },
     listenWith: { nl: "Luister mee met", en: "Listen with" },
     moreFrom: { nl: "Meer van", en: "More from" },
   },

@@ -7,7 +7,6 @@ import { accentClasses } from "@/lib/accent";
 import { SkyScene } from "@/components/sky-scene";
 import { WaveDivider } from "@/components/wave-divider";
 import { AmbientSparkles } from "@/components/ambient-sparkles";
-import { ChapterLabel } from "@/components/chapter-label";
 import { PageTurn } from "@/components/page-turn";
 import { CharacterChip } from "@/components/content/character-chip";
 import { Shelf } from "@/components/content/shelf";
@@ -39,7 +38,6 @@ export default async function HomePage() {
         <FlourishIcon className="pointer-events-none absolute right-6 top-6 h-7 w-11 -scale-x-100 text-white/60" aria-hidden="true" />
         <FlourishIcon className="pointer-events-none absolute bottom-6 left-6 h-7 w-11 -scale-y-100 text-white/60" aria-hidden="true" />
         <FlourishIcon className="pointer-events-none absolute bottom-6 right-6 h-7 w-11 -scale-x-100 -scale-y-100 text-white/60" aria-hidden="true" />
-        <ChapterLabel label={t(ui.home.prologueLabel, locale)} className={heroAccent.onBg} />
         <WaveDivider />
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:py-20 lg:grid-cols-2 lg:py-24">
           <div>

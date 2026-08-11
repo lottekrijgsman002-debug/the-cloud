@@ -8,7 +8,6 @@ import { ContentCard } from "@/components/content/content-card";
 import { SkyScene } from "@/components/sky-scene";
 import { WaveDivider } from "@/components/wave-divider";
 import { AmbientSparkles } from "@/components/ambient-sparkles";
-import { ChapterLabel } from "@/components/chapter-label";
 import { PageTurn } from "@/components/page-turn";
 import { FlourishIcon } from "@/components/icons";
 
@@ -58,7 +57,6 @@ export async function PillarHub({
         <FlourishIcon className="pointer-events-none absolute right-6 top-6 h-7 w-11 -scale-x-100 text-white/60" aria-hidden="true" />
         <FlourishIcon className="pointer-events-none absolute bottom-6 left-6 h-7 w-11 -scale-y-100 text-white/60" aria-hidden="true" />
         <FlourishIcon className="pointer-events-none absolute bottom-6 right-6 h-7 w-11 -scale-x-100 -scale-y-100 text-white/60" aria-hidden="true" />
-        <ChapterLabel label={`${t(ui.hubs.partLabel, locale)} — ${t(title, locale)}`} className={accent.onBg} />
         <WaveDivider />
         <div className="relative mx-auto max-w-4xl px-5 py-14 text-center sm:py-20">
           <h1 className={`font-display text-4xl font-semibold sm:text-5xl ${accent.onBg}`}>{t(title, locale)}</h1>
