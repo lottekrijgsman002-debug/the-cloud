@@ -45,7 +45,9 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-repeat: repeat;
   color: var(--foreground);
   font-family: var(--font-body), serif;
 }
@@ -150,4 +152,62 @@ h1, h2, h3, h4, .font-display {
     radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.22) 4px, transparent 4px),
     radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.18) 6px, transparent 6px);
   background-size: 120px 120px, 170px 170px;
+}
+
+/* Ornamental wavy underline for shelf/chapter headings — a solid-color
+   mask so any accent color can be dropped in via background-color. */
+.heading-squiggle {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='8'%3E%3Cpath d='M0 4 Q3.5 0 7 4 T14 4 T21 4 T28 4' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='8'%3E%3Cpath d='M0 4 Q3.5 0 7 4 T14 4 T21 4 T28 4' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-size: 28px 8px;
+  mask-size: 28px 8px;
+}
+
+/* A big illuminated first letter, dropped inline in front of a lead
+   paragraph — sized up rather than floated, so centered text stays intact. */
+.drop-cap-letter {
+  font-size: 2.15em;
+  font-weight: 700;
+  line-height: 0.7;
+  vertical-align: -0.14em;
+  margin-right: 0.03em;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+}
+
+/* Folded-corner "page curl" hint in the bottom-right of content cards,
+   growing on hover like the page is about to turn. */
+.content-card-glow {
+  position: relative;
+}
+
+.content-card-glow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 20px 20px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.12) transparent;
+  border-radius: 0 0 1.75rem 0;
+  transition: border-width 300ms ease-out, border-color 300ms ease-out;
+  pointer-events: none;
+}
+
+.content-card-glow:hover::after {
+  border-width: 0 0 34px 34px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.22) transparent;
+}
+
+/* Confetti burst for the favorite button */
+@keyframes confetti-pop {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+}
+
+.confetti-particle {
+  animation: confetti-pop 650ms ease-out forwards;
 }

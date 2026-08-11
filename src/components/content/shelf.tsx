@@ -3,7 +3,7 @@ import type { Character, ContentItem, Locale } from "@/lib/types";
 import { t } from "@/lib/locale";
 import { ui } from "@/lib/ui-strings";
 import { ContentCard } from "@/components/content/content-card";
-import { ChevronRight } from "@/components/icons";
+import { ChevronRight, FlourishIcon } from "@/components/icons";
 
 export function Shelf({
   title,
@@ -11,22 +11,27 @@ export function Shelf({
   characters,
   locale,
   seeAllHref,
+  accentColor = "#f17422",
 }: {
   title: string;
   items: ContentItem[];
   characters: Character[];
   locale: Locale;
   seeAllHref?: string;
+  accentColor?: string;
 }) {
   if (items.length === 0) return null;
 
   return (
     <div>
-      <div className="mb-6 flex items-center justify-between">
-        <h2 className="flex items-center gap-3 font-display text-2xl font-bold text-ink sm:text-4xl">
-          <span className="h-8 w-2 rounded-full bg-orange sm:h-10" />
-          {title}
-        </h2>
+      <div className="mb-8 flex items-end justify-between gap-4">
+        <div>
+          <h2 className="flex items-center gap-2.5 font-display text-2xl font-bold text-ink sm:text-4xl">
+            <FlourishIcon className="h-6 w-9 sm:h-7 sm:w-10" style={{ color: accentColor }} />
+            {title}
+          </h2>
+          <span className="heading-squiggle mt-2 block h-[7px] w-20 sm:w-28" style={{ backgroundColor: accentColor }} />
+        </div>
         {seeAllHref && (
           <Link
             href={seeAllHref}

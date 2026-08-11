@@ -159,6 +159,18 @@ export function SparkleBurstIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+export function FlourishIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 40 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...props}>
+      <path
+        d="M1 12c4-8 10-10 14-6 3 3 1 7-3 7-3 0-4-3-1-5 3-2 8-2 11 1s3 8-1 10c-2.5 1.7-6 1-7.5-1.3"
+        strokeLinecap="round"
+      />
+      <circle cx="36.5" cy="6.5" r="1.4" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 export function HouseIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
