@@ -35,6 +35,7 @@ export function Shelf({
         {seeAllHref && (
           <Link
             href={seeAllHref}
+            transitionTypes={["nav-forward"]}
             className="group/link flex items-center gap-1.5 rounded-full border-2 border-orange px-4 py-2 font-display text-sm font-bold text-orange-deep transition-all duration-200 hover:gap-3 hover:bg-orange hover:text-white hover:shadow-lg"
           >
             {t(ui.common.seeAll, locale)}

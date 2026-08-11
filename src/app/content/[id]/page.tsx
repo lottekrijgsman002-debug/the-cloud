@@ -7,6 +7,8 @@ import { contentRepository } from "@/lib/content-repository";
 import { contentItems } from "@/data/content-items";
 import { accentClasses } from "@/lib/accent";
 import { SkyScene } from "@/components/sky-scene";
+import { WaveDivider } from "@/components/wave-divider";
+import { PageTurn } from "@/components/page-turn";
 import { FavoriteButton } from "@/components/content/favorite-button";
 import { Shelf } from "@/components/content/shelf";
 import { RecordView } from "@/components/content/record-view";
@@ -35,14 +37,16 @@ export default async function ContentDetailPage({ params }: { params: Promise<{ 
   const Icon = pillarIcon[item.pillar];
 
   return (
-    <>
+    <PageTurn>
       <RecordView contentId={item.id} />
 
-      <section className={`relative overflow-hidden ${accent.bg}`}>
+      <section className={`relative overflow-hidden ${accent.bg} ${accent.pattern}`}>
         <SkyScene />
+        <WaveDivider />
         <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-5 px-5 py-14 text-center sm:py-20">
           <Link
             href={character ? `/characters/${character.slug}` : "/"}
+            transitionTypes={["nav-back"]}
             className={`inline-flex items-center gap-1 text-sm font-semibold opacity-80 transition-opacity hover:opacity-100 ${accent.onBg}`}
           >
             <ChevronRight className="h-4 w-4 rotate-180" />
@@ -89,6 +93,6 @@ export default async function ContentDetailPage({ params }: { params: Promise<{ 
           accentColor={accent.borderColorStrong}
         />
       </div>
-    </>
+    </PageTurn>
   );
 }

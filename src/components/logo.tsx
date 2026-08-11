@@ -5,6 +5,7 @@ export function Logo({ size = 56 }: { size?: number }) {
   return (
     <Link
       href="/"
+      transitionTypes={["nav-back"]}
       className="relative flex shrink-0 items-center justify-center"
       style={{ width: size, height: size }}
       aria-label="Loulou & Lou, home"

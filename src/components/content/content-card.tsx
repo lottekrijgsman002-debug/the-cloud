@@ -26,6 +26,7 @@ export function ContentCard({
   return (
     <Link
       href={`/content/${item.id}`}
+      transitionTypes={["nav-forward"]}
       className={`content-card-glow group flex w-56 shrink-0 flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-md transition-all duration-300 ease-out hover:-translate-y-3 hover:scale-[1.06] hover:rotate-1 sm:w-full ${
         featured ? "sm:flex-row sm:h-56" : ""
       }`}

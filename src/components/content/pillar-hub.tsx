@@ -6,6 +6,11 @@ import { contentRepository } from "@/lib/content-repository";
 import { accentClasses } from "@/lib/accent";
 import { ContentCard } from "@/components/content/content-card";
 import { SkyScene } from "@/components/sky-scene";
+import { WaveDivider } from "@/components/wave-divider";
+import { AmbientSparkles } from "@/components/ambient-sparkles";
+import { ChapterLabel } from "@/components/chapter-label";
+import { PageTurn } from "@/components/page-turn";
+import { FlourishIcon } from "@/components/icons";
 
 const pillarAccent: Record<Pillar, keyof typeof accentClasses> = {
   listen: "mustard",
@@ -43,16 +48,26 @@ export async function PillarHub({
   const accent = accentClasses[pillarAccent[pillar]];
 
   return (
-    <>
-      <section className={`relative overflow-hidden ${accent.bg}`}>
+    <PageTurn>
+      <section
+        className={`relative overflow-hidden ${accent.bg} ${accent.pattern}`}
+        style={{ boxShadow: "inset 0 0 0 3px rgba(255,255,255,0.4), inset 0 0 0 11px rgba(255,255,255,0.15)" }}
+      >
         <SkyScene />
+        <FlourishIcon className="pointer-events-none absolute left-6 top-6 h-7 w-11 text-white/60" aria-hidden="true" />
+        <FlourishIcon className="pointer-events-none absolute right-6 top-6 h-7 w-11 -scale-x-100 text-white/60" aria-hidden="true" />
+        <FlourishIcon className="pointer-events-none absolute bottom-6 left-6 h-7 w-11 -scale-y-100 text-white/60" aria-hidden="true" />
+        <FlourishIcon className="pointer-events-none absolute bottom-6 right-6 h-7 w-11 -scale-x-100 -scale-y-100 text-white/60" aria-hidden="true" />
+        <ChapterLabel label={`${t(ui.hubs.partLabel, locale)} — ${t(title, locale)}`} className={accent.onBg} />
+        <WaveDivider />
         <div className="relative mx-auto max-w-4xl px-5 py-14 text-center sm:py-20">
           <h1 className={`font-display text-4xl font-semibold sm:text-5xl ${accent.onBg}`}>{t(title, locale)}</h1>
           <p className={`mx-auto mt-4 max-w-2xl text-lg leading-relaxed ${accent.onBgSoft}`}>{t(intro, locale)}</p>
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-5 py-14">
+      <div className="relative mx-auto max-w-6xl px-5 py-14">
+        <AmbientSparkles color={accent.borderColorStrong} />
         <div className="mb-8 flex flex-wrap items-center gap-2">
           <FilterChip href={basePath} active={!activeCharacter && !onlyNew} label={t(ui.hubs.filterAll, locale)} />
           <FilterChip
@@ -88,7 +103,7 @@ export async function PillarHub({
           </div>
         )}
       </div>
-    </>
+    </PageTurn>
   );
 }
 

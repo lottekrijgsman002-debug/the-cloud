@@ -11,6 +11,8 @@ import { CharacterDecorations } from "@/components/character-decorations";
 import { WaveDivider } from "@/components/wave-divider";
 import { AmbientSparkles } from "@/components/ambient-sparkles";
 import { FlourishIcon } from "@/components/icons";
+import { ChapterLabel } from "@/components/chapter-label";
+import { PageTurn } from "@/components/page-turn";
 import { Shelf } from "@/components/content/shelf";
 
 export function generateStaticParams() {
@@ -31,7 +33,7 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
   const voiceLine = t(character.voiceLine, locale);
 
   return (
-    <>
+    <PageTurn>
       <section
         className={`relative overflow-hidden ${accent.bg} ${accent.pattern}`}
         style={{ boxShadow: "inset 0 0 0 3px rgba(255,255,255,0.4), inset 0 0 0 11px rgba(255,255,255,0.15)" }}
@@ -42,6 +44,7 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
         <FlourishIcon className="pointer-events-none absolute right-6 top-6 h-7 w-11 -scale-x-100 text-white/60" aria-hidden="true" />
         <FlourishIcon className="pointer-events-none absolute bottom-6 left-6 h-7 w-11 -scale-y-100 text-white/60" aria-hidden="true" />
         <FlourishIcon className="pointer-events-none absolute bottom-6 right-6 h-7 w-11 -scale-x-100 -scale-y-100 text-white/60" aria-hidden="true" />
+        <ChapterLabel label={`${t(ui.character.chapterLabel, locale)} — ${character.name}`} className={accent.onBg} />
         <WaveDivider />
         <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-8 px-5 py-20 text-center sm:gap-10 sm:py-28">
           <div className="animate-bob flex h-48 w-48 overflow-hidden rounded-full bg-white/15 sm:h-56 sm:w-56" style={{ borderWidth: "12px", borderColor: accent.borderColorStrong, boxShadow: `0 0 0 4px rgba(255,255,255,0.5), 0 0 24px ${accent.borderColorStrong}80, 0 12px 24px rgba(0,0,0,0.3)` }}>
@@ -102,6 +105,6 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
           accentColor={accent.borderColorStrong}
         />
       </div>
-    </>
+    </PageTurn>
   );
 }

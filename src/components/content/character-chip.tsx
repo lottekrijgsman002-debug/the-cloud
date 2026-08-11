@@ -7,7 +7,11 @@ export function CharacterChip({ character, size = 84 }: { character: Character; 
   const accent = accentClasses[character.accentToken];
 
   return (
-    <Link href={`/characters/${character.slug}`} className="flex flex-col items-center gap-2 text-center">
+    <Link
+      href={`/characters/${character.slug}`}
+      transitionTypes={["nav-forward"]}
+      className="flex flex-col items-center gap-2 text-center"
+    >
       <div
         className={`flex shrink-0 items-center justify-center overflow-hidden rounded-full border-[3px] bg-white shadow-sm ${
           character.portrait ? accent.border : `border-dashed p-2 ${accent.border}`

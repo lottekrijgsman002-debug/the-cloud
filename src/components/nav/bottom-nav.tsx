@@ -10,6 +10,7 @@ export function BottomNav({ locale }: { locale: Locale }) {
         <Link
           key={href}
           href={href}
+          transitionTypes={[href === "/" ? "nav-back" : "nav-forward"]}
           className="flex flex-1 flex-col items-center gap-0.5 px-1 py-2 text-ink-soft"
         >
           <Icon className="h-5 w-5" />
