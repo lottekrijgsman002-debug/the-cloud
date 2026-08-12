@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Character } from "@/lib/types";
 import { accentClasses } from "@/lib/accent";
 
-export function CharacterChip({ character, size = 84 }: { character: Character; size?: number }) {
+export function CharacterChip({ character, size = 108 }: { character: Character; size?: number }) {
   const accent = accentClasses[character.accentToken];
 
   return (
@@ -35,7 +35,7 @@ export function CharacterChip({ character, size = 84 }: { character: Character; 
           </span>
         )}
       </div>
-      <span className="max-w-[6rem] font-display text-xs font-semibold text-ink-soft">{character.name}</span>
+      <span className="max-w-[7rem] font-display text-xs font-semibold text-ink-soft">{character.name}</span>
     </Link>
   );
 }
