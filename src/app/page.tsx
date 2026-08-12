@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getLocale } from "@/lib/get-locale";
 import { t } from "@/lib/locale";
 import { ui } from "@/lib/ui-strings";
@@ -72,13 +73,24 @@ export default async function HomePage() {
             <Link
               href={`/content/${campaignPick.id}`}
               transitionTypes={["nav-forward"]}
-              className="group relative mx-auto flex aspect-square w-full max-w-sm flex-col items-center justify-center gap-4 rounded-full bg-white p-10 text-center shadow-xl transition-transform hover:-translate-y-1"
+              className="group relative mx-auto flex aspect-square w-full max-w-sm flex-col items-center justify-center gap-4 overflow-hidden rounded-full bg-white p-10 text-center shadow-xl transition-transform hover:-translate-y-1"
             >
-              <div className={`flex h-20 w-20 items-center justify-center rounded-full ${heroAccent.bgSoft}`}>
-                <ChevronRight className={`h-8 w-8 ${heroAccent.text}`} />
-              </div>
-              <h2 className="font-display text-xl font-semibold text-ink">{t(campaignPick.title, locale)}</h2>
-              <p className="text-sm text-ink-soft">{t(campaignPick.description, locale)}</p>
+              {campaignPick.image ? (
+                <Image
+                  src={campaignPick.image}
+                  alt={t(campaignPick.title, locale)}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              ) : (
+                <>
+                  <div className={`flex h-20 w-20 items-center justify-center rounded-full ${heroAccent.bgSoft}`}>
+                    <ChevronRight className={`h-8 w-8 ${heroAccent.text}`} />
+                  </div>
+                  <h2 className="font-display text-xl font-semibold text-ink">{t(campaignPick.title, locale)}</h2>
+                  <p className="text-sm text-ink-soft">{t(campaignPick.description, locale)}</p>
+                </>
+              )}
             </Link>
           )}
         </div>

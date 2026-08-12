@@ -40,6 +40,8 @@ export interface ContentItem {
   isNew?: boolean;
   isBedtimePick?: boolean;
   isCampaign?: boolean;
+  /** Path under /public to the item's real artwork, if exported yet. */
+  image?: string;
 }
 
 /** Parent account. Single child profile per account in v1. */

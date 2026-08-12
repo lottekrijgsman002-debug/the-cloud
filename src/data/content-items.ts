@@ -24,6 +24,7 @@ export const contentItems: ContentItem[] = [
     ageBands: ["3-6", "6-9"],
     tags: ["adventure", "singalong"],
     isCampaign: true,
+    image: "/campaign/op-avontuur.jpg",
   },
   {
     id: "story-loulou-verdwenen-ster",
