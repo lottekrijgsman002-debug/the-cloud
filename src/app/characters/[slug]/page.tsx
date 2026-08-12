@@ -64,13 +64,11 @@ export default async function CharacterPage({ params }: { params: Promise<{ slug
             {character.moodWords.map((word) => (
               <span
                 key={word.en}
-                className={`rounded-full px-4 py-2 font-display text-sm font-semibold ${accent.text} transition-all hover:scale-110 hover:shadow-xl`}
+                className={`rounded-full bg-white px-4 py-2 font-display text-sm font-semibold ${accent.text} transition-all hover:scale-110 hover:shadow-xl`}
                 style={{
                   borderWidth: "4px",
                   borderColor: accent.borderColorStrong,
                   borderStyle: "solid",
-                  backgroundColor: accent.borderColorSoft,
-                  color: accent.textDeep,
                   boxShadow: `0 4px 12px ${accent.borderColorStrong}40`
                 }}
               >
